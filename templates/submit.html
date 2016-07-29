@@ -1,0 +1,41 @@
+<ion-view view-title="投注成功">
+    <div class="bar bar-header bar-stable">
+        <a class="button button-icon icon ion-chevron-left" ng-click="goPick()"></a>
+        <h1 class="title">投注成功</h1>
+    </div>
+    <ion-content class="has-footer has-header bg-drawing" overflow-scroll="true">
+        <!--彩票方案操作-->
+        <div class="result-box">
+            <dl class="result-bet-info">
+                <dt>彩种名称</dt>
+                <dd>{{gameTypeCn}}</dd>
+
+                <dt>期号</dt>
+                <dd>第{{IssueInfo.number}}期[追{{globelMultipleData.continuesBet}}期]</dd>
+
+                <dt>投注金额</dt>
+                <dd>{{(totalMoney = totalObject.totalM * globelMultipleData.multiple| number:1)  }}元</dd>
+
+                <dt>投注内容</dt>
+                <dd></dd>
+            </dl>
+            <div class="result-list">
+                <div class="result-list-shadow"></div>
+                <ul class="scheme-list">
+                    <li class="{{obj.type.indexOf('2000') != -1? 'super-2000':''}} scheme submit {{obj.isDanshi? 'scheme2':''}}" ng-repeat="(i,obj) in ballBucket">
+                        <dl>
+                            <dt>{{obj.isDanshi?  obj.ballLabel :(obj.checkBallArray | filterArray:obj.type:obj)}}</dt>
+                            <dd>{{ obj.label | split:'_':'latest' }} {{ obj.count }}注x{{ obj.onePrice * obj.moneyUnit }}元</dd>
+                        </dl>
+                        <span class="scheme-multiple"><button>{{obj.type.indexOf('2000') != -1? '2000':(obj.awardMode==2? '1880': '1800')}}</button>{{ obj.totalMultiple }}倍</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </ion-content>
+
+    <div class="bar bar-footer bar-foot-submit-finished">
+        <button class="button button-full button-submit-finished" ng-click="goPick()">继 续 投 注</button>
+    </div>
+
+</ion-view>

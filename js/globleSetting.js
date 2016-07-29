@@ -1,0 +1,2 @@
+var GlobleSetting = new Class({
+});

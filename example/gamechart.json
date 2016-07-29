@@ -1,0 +1,55 @@
+{
+  "head" : null,
+  "body" : {
+    "result" : [ {
+      "webIssueCode" : "085",
+      "numberRecord" : 48371,
+      "kuadu" : 6,
+      "totValue" : 11,
+      "super2000" : false
+    }, {
+      "webIssueCode" : "084",
+      "numberRecord" : 42866,
+      "kuadu" : 2,
+      "totValue" : 20,
+      "super2000" : true
+    }, {
+      "webIssueCode" : "083",
+      "numberRecord" : 24802,
+      "kuadu" : 8,
+      "totValue" : 10,
+      "super2000" : true
+    }, {
+      "webIssueCode" : "082",
+      "numberRecord" : 86799,
+      "kuadu" : 2,
+      "totValue" : 25,
+      "super2000" : true
+    }, {
+      "webIssueCode" : "081",
+      "numberRecord" : 74296,
+      "kuadu" : 7,
+      "totValue" : 17,
+      "super2000" : true
+    }, {
+      "webIssueCode" : "080",
+      "numberRecord" : 94003,
+      "kuadu" : 3,
+      "totValue" : 3,
+      "super2000" : true
+    }, {
+      "webIssueCode" : "079",
+      "numberRecord" : 63763,
+      "kuadu" : 4,
+      "totValue" : 16,
+      "super2000" : true
+    }, {
+      "webIssueCode" : "078",
+      "numberRecord" : 7857,
+      "kuadu" : 3,
+      "totValue" : 20,
+      "super2000" : true
+    } ],
+    "pager" : null
+  }
+}

@@ -1,0 +1,85 @@
+<ion-view view-title="号码篮">
+    <div class="bar bar-header bar-stable">
+
+        <div class="ar-popmenu {{menuShow? '':'menuShow'}}">
+            <ul>
+                <li ng-click="yuanjiao()">模式 {{ moneyUnit==1?"元":"角" }}</li>
+                <li ng-click="fandian()">奖金返点</li>
+            </ul>
+        </div>
+
+        <a class="button button-icon icon ion-chevron-left" ng-click="goPick()"></a>
+
+        <h1 class="title" ng-click="poptypeshow = !poptypeshow">号码篮</h1>
+        <!--<span ng-click="volumeSwich()"-->
+              <!--class="button button-icon icon  {{volume ? 'ion-android-volume-up':'ion-android-volume-off' }}"></span>-->
+        <a class="button button-icon icon ion-more" ng-click="menuShowHander($event)"></a>
+    </div>
+    <ion-content class="has-footer has-header bg-drawing" overflow-scroll="true">
+        <!--彩票方案操作-->
+        <div class="result-box">
+            <div class="result-operate">
+                <span class="ar-btn" ng-click="goPick()">自选号码</span>
+                <span class="ar-btn" ng-click="getrandomBalls()">机选一注</span>
+                <span class="ar-btn" ng-click="showConfirm()">清空</span>
+            </div>
+
+            <div class="result-list">
+                <div class="result-list-shadow"></div>
+                <ul class="scheme-list">
+                    <li class="{{obj.type.indexOf('2000') != -1? 'super-2000':''}} scheme {{obj.isDanshi? 'scheme2':''}}" ng-repeat="(i,obj) in ballBucket track by initBacketList($index,obj)"
+                        ng-click="editLottory(obj)">
+                        <dl>
+                            <dt>{{obj.isDanshi?  obj.ballLabel :(obj.checkBallArray | filterArray:obj.type:obj)}}</dt>
+                            <dd>{{ obj.label | split:'_':'latest' }} {{ obj.count }}注x{{ obj.onePrice * obj.moneyUnit }}元</dd>
+                        </dl>
+                        <span class="scheme-multiple"><button>{{obj.type.indexOf('2000') != -1? '2000':(obj.awardMode==2? '1880': '1800')}}</button>{{ obj.totalMultiple }}倍</span>
+
+                        <span class="scheme-delete" ng-click="removeBucketItem(i,$event)"></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </ion-content>
+    <div class="extra-operate extraOperateShow">
+        <div class="extra-box">
+            <label>投</label>
+
+            <p>
+                <span class="op-plus" ng-click="minderMutl()">-</span>
+                <input type="tel" ng-model="globelMultipleData.multiple" id="globleMultipleChange">
+
+                <span class="op-minus" ng-click="globleMultipleChange(true)">+</span>
+            </p>
+            <label>倍</label>
+        </div>
+        <div class="extra-box">
+            <label>追</label>
+
+            <p>
+                <span class="op-plus"
+                      ng-click="minusContinuesBet()">-</span>
+                <input type="tel" ng-model="globelMultipleData.continuesBet" id="changeContinuesBet">
+                <span class="op-minus"
+                      ng-click="plusContinuesBet()">+</span>
+            </p>
+            <label>期</label>
+        </div>
+    </div>
+    <div class="clear zhuihao">
+        <span><input type="checkbox" id="traceWinStop" ng-model="globelMultipleData.traceWinStop" /></span>
+        <label for="traceWinStop">中奖后停止追号</label>
+    </div>
+
+    <div class="bar bar-footer bar-stable">
+        <div class="select-result">
+            <dl class="result-money confirm-money">
+                <dt>共{{ totalObject.totalCount }}注，<span>{{(totalMoney = totalObject.totalM * globelMultipleData.multiple| number:1)  }}元 </span>
+                </dt>
+                <dd>余额：{{serverGameConfig.balance | currency: ''}}元</dd>
+            </dl>
+        </div>
+        <div class="result-next result-confirm" ng-click="gosubmit(0)">投注</div>
+    </div>
+
+</ion-view>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="js/myclass/myclass.js"></script>
+
+<script>
+
+    var obj = {
+        "百位": [true, false, false, false, false, false, false, false, false, false],
+        "十位": [false, false, false, false, false, false, false, false, true, false],
+        "个位": [false, false, false, false, false, true, false, false, false, false]
+    };
+    var a = Object.create(obj);
+    console.log(a);
+
+</script>
+
+</body>
+</html>

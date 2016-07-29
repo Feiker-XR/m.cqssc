@@ -1,30 +1,34 @@
 {
-  "name": "m.cqssc",
-  "version": "0.0.0",
-  "private": true,
+  "name": "gitbucketmmc",
+  "version": "1.0.0",
+  "description": "## 需要缓存的文件:",
+  "main": "data.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./bin/www"
   },
-  "dependencies": {
-    "body-parser": "~1.15.1",
-    "cookie-parser": "~1.4.3",
-    "debug": "~2.2.0",
-    "ejs": "~2.4.1",
-    "express": "~4.13.4",
-    "morgan": "~1.7.0",
-    "serve-favicon": "~2.3.0"
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/richardgong1987/mmc.git"
   },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/richardgong1987/mmc#readme",
   "devDependencies": {
-    "bower": "^1.7.9",
+    "del": "^2.2.1",
+    "express": "^4.14.0",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
-    "gulp-imagemin": "^3.0.2",
-    "gulp-jshint": "^2.0.1",
     "gulp-minify-css": "^1.2.4",
     "gulp-minify-html": "^1.0.6",
     "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.3.2",
-    "gulp-uglify": "^1.5.4",
-    "jshint": "^2.9.2"
+    "gulp-uglify": "^1.5.4"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "debug": "^2.2.0",
+    "ejs": "^2.5.1",
+    "express": "^4.14.0"
   }
 }
