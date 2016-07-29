@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html ng-app="ion">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>just a test</title>
+    <link href="../libs/ionic/release/css/ionic.css" rel="stylesheet">
+    <link href="../public/src/test.css" rel="stylesheet">
+</head>
+
+<body ng-controller="bodyCtrl">
+
+    <ion-side-menus>
+        <!-- 中心内容 -->
+        <ion-side-menu-content>
+            <ion-header-bar class="bar-dark">
+                <h1 class="title">Todo</h1>
+            </ion-header-bar>
+            <ion-content>
+                <!--列表-->
+                <ion-list>
+                    <ion-item ng-repeat="task in tasks">{{task.title}}</ion-item>
+                </ion-list>
+            </ion-content>
+        </ion-side-menu-content>
+
+
+        <!-- 左侧菜单 -->
+        <ion-side-menu side="left">
+            <ion-header-bar class="bar-dark">
+                <h1 class="title">Projects</h1>
+            </ion-header-bar>
+        </ion-side-menu>
+
+    </ion-side-menus>
+    <!--<ion-header-bar class="bar-positive">
+        <h1 class="title">Hello World!</h1>
+        <i style="line-height:2.2em;">how is today?</i>
+    </ion-header-bar>
+
+    <ion-content>
+        <p>我的第一个 ionic 应用。</p>
+    </ion-content>-->
+
+    <script src="../libs/ionic/release/js/ionic.bundle.js"></script>
+    <script type="text/javascript">
+
+        var ino = angular.module('ion',['ionic']);
+        ino.controller('bodyCtrl',function($scope){
+            $scope.tasks = [
+                { title: '菜鸟教程' },
+                { title: 'www.runoob.com' },
+                { title: '菜鸟教程' },
+                { title: 'www.runoob.com' }
+            ];
+        });
+       
+       
+    </script>
+</body>
+
+</html>
