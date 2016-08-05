@@ -1,0 +1,21 @@
+$designWidht:		640;
+$designHeight:		1136;
+$barHeigth:			88;
+$barFontsize:		36;
+
+.F-box{
+	visibility:hidden;
+	background:red;
+	.F-page{
+		width:$designWidht+px;
+		height: $designHeight+px;
+		background:blue;
+	}
+}
+
+
+.bar{
+	width:$designWidht+px;
+	height:$barHeigth+px;
+	background:green;
+}

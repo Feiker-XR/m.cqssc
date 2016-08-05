@@ -11,6 +11,9 @@
                 gulp-jshint                         //javascript语法检查
                 gulp-imagemin                       //图片压缩
                 gulp-sass                           //编译sass
+                gulp-autoprefixer                   //浏览器前缀
+                gulp-notify                         //通知
+                gulp-clean                          //清理文件
             --save-dev
     创建 gulpfile.js
 
