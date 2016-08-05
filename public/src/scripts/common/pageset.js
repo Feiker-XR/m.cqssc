@@ -1,8 +1,10 @@
 (function($, window, designWidth){
-	$('.Q-box').css({
-		'width' : window.innerWidth + 'px',
-		'height' : window.innerHeight+'px',
-		'visibility' : 'visible'
+	$(window).on('ready resize',function(){
+		$('.Q-box').css({
+			'width' : window.innerWidth + 'px',
+			'height' : window.innerHeight+'px',
+			'visibility' : 'visible'
+		});
+		$('.Q-page').css('zoom',window.innerWidth / designWidth);
 	});
-	$('.Q-page').css('zoom',window.innerWidth / designWidth);
 })(Zepto, window, 640);

@@ -1,0 +1,37 @@
+@import './../variables';
+.ol-box{
+	width        :  $designWidth+px;
+	height       :  auto;
+	@include position();
+	left         :  0;
+	bottom       :  $barHeight/4+px;
+	padding-left :  $barHeight*2+px;
+	text-align   :  center;
+	li{
+		width           :  $barHeight*3/2+px;
+		height          :  $barHeight+px;
+		text-align      :  center;
+		color           :  $colorLoginGray;
+		line-height     :  $barHeight*3/2+px;
+		font-size       :  $barFontsize/1.25+px;
+		float           :  left;
+		// font-weight     :  bold;
+		margin          :  0 10px;
+		overflow        :  hidden;
+	}
+	.active{
+		color           :  $colorLoginBule;
+		border-bottom   :  3px solid $colorLoginBule;
+	}
+}
+.footer{
+	background:url(../imgs/icons/icon-phone.png) no-repeat $designWidth/3+px center ;
+	top: $barHeight/2+px;
+	a{
+		font-size       :  $barFontsize/3*2+px;
+		text-decoration :  none;
+		line-height     :  $barHeight+px;
+		color           :  $colorLoginGray;
+		margin-left     :  $barHeight/2+px;
+	}
+}

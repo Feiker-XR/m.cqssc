@@ -1,0 +1,35 @@
+//变量
+$designWidth          :		640;
+$designHeight         :		1136;
+$barHeight            :		88;
+$barFontsize          :		36;
+$colorWhite           :		#ffffff;
+$colorBorderGray      :     #cccccc;
+$colorInputBorderGray :     #eeeeee;
+$colorBgGray		  : 	#f7f7f7;
+$colorLoginBule		  :     #26bfa6;
+$colorLoginGray		  :     #999999;
+$colorLabelGray       :     #b5b5b5;
+$colorWarnRed         :     #ff0000;
+$colorBtnBlue         :     #59b3a4;
+
+
+//定位
+@mixin relative(){
+	display  :  block;
+	position : 	relative;
+	left 	 :  0;
+	top 	 :  0;
+} 
+@mixin position(){
+	display  : block;
+	position : absolute;
+}
+
+//标题栏的字体样式
+.fontStyle{
+	font-size   : $barFontsize+px;
+	text-align  : center;
+	line-height : $barHeight+px;
+	color       : $colorWhite;
+}

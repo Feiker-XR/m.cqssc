@@ -5,21 +5,58 @@
   	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
     <title><%= title %></title>
     <link rel='stylesheet' href='/mid/css/all.css' />
+    <link rel='stylesheet' href='/mid/css/login.css' />
   </head>
   <body>
 
     <div class="Q-box">
     	<div class="Q-page">
-    		<header class="bar"><h1 class="title">登录<h1></header>
-    		<div class="content">
-    			<aside class="banner"></aside>
-    			<section>
+    	<!--标题栏-->
+    		<header class="bar">
+    			<h1 class="title">登录<h1>
+    		</header>
+    	<!--logo栏-->
+			<aside class="banner">
+				<i class="icon icon-level"></i>
+				<ol class="ol-box">
+					<li class="active">普通登录</li>
+					<li>安全登陆</li>
+				</ol>
+			</aside>
+		<!--普通登录-->
+    		<section class="content">
+				<ul class="list">
+					<li class="item">
+						<label>账户</label>
+						<input type="text" placeholder="请输入您的账户名" maxlength="16" />
+						<i class="icon icon-exist"></i>
+					</li>
+					<li class="item">
+						<label>密码</label>
+						<input type="text" placeholder="请输入您的密码" />
+					</li>
+					<li class="item">
+						<label>验证码</label>
+						<input type="text" placeholder="请输入验证码" class='verify' maxlength="4" />
+						<img src="/mid/imgs/changevcode.png" width='160' height='60'>
+						<i class="icon icon-new"></i>
+					</li>
+				</ul>
+    		</section>
+    		<!-- <section>
     				
-    			</section>
-    			<section>
-    				
-    			</section>
-    		</div>
+    			</section> -->
+    	<!--错误提示栏-->
+    		<p class="tip-box">
+    			<i class="tip">这里是错误提示</i>
+    			<a class="text" href="#" title>忘记密码？</a>
+    		</p>
+			<div class="btn-box">
+				<button class="btn btn-login">登录</button>
+			</div>
+    		<footer class="footer">
+    			<a href="#">下载APP</a>
+    		</footer>	
     	</div>
     </div>
 

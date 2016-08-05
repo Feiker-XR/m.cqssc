@@ -1,35 +1,151 @@
-$designWidht:		640;
-$designHeight:		1136;
-$barHeigth:			88;
-$barFontsize:		36;
-$colorWhite:		#ffffff;
+@import './variables';
+
+//容器
 .Q-box{
-	visibility:hidden;
+	visibility : hidden;
+	background : $colorBgGray;
 	.Q-page{
-		width:$designWidht+px;
-		height: $designHeight+px;
+		width  : $designWidth+px;
+		height : $designHeight+px;
+		background : $colorBgGray;
 	}
 }
 
-@mixin position($type,$left,$top){
-	position:$type;
-	left:$left+px;
-	top:$top+px;
-} 
-
-.fontStyle{
-	font-size:$barFontsize+px;
-	text-align:center;
-	line-height:$barHeigth+px;
-	color:$colorWhite;
-}
-
+//标题栏
 .bar{
-	@include position(relative,0,0);
-	width:$designWidht+px;
-	height:$barHeigth+px;
-	background:url(../imgs/icons/bg-bar.jpg) repeat-x;
+	@include relative();
+	width 	   :  $designWidth+px;
+	height     :  $barHeight+px;
+	background :  url(../imgs/icons/bg-bar.jpg) repeat-x;
 	.title{
 		@extend .fontStyle;
 	}
+}
+//图标
+.icon{
+	@include position();
+	border  	:   none;
+	display 	: 	block;
+	height  	: 	$barHeight+px;
+	width   	: 	$barHeight+px;
+	&.icon-return{
+		background : url(../imgs/icons/icon-return.png) no-repeat center center;
+	}
+	&.icon-level{
+		background : url(../imgs/icons/icon-v1.png) no-repeat center center;
+		left       : 315px;
+		top        : 100px;
+	}
+	&.icon-exist{
+		background : url(../imgs/icons/icon-exist.png) no-repeat center center;
+		top:0;
+		right:10px;
+	}
+	&.icon-new{
+		background : url(../imgs/icons/icon-new.png) no-repeat center center ;
+		bottom:0;
+		right: 10px;
+	}
+}
+//按钮
+.btn-box{
+	@include relative();
+}
+.btn{
+	
+	outline        :  none;
+	border-radius  :  5px;
+	width          :  $designWidth - 40+px;
+	height         :  $barHeight - 8 +px;
+	margin-left    :  20px;
+	margin-top     :  $barHeight+px;
+	background     :  url(../imgs/icons/bg-btn.jpg) repeat-x;
+	font-size      :  $barFontsize+px;
+	line-height    :  $barHeight - 8+px;
+	color          :  $colorBtnBlue;
+	font-weight    :  bold;
+	letter-spacing : 2px;
+	&.btn-login{
+		top:$barHeight+px;
+	}
+}
+
+//banner区	
+.banner{
+	@include relative();
+	width      : $designWidth+px;
+	height     : $barHeight*3+px; 
+	background : url(../imgs/icons/bg-logo.png) no-repeat center 40px;	
+}
+
+.content{
+	@include relative();
+	//列表
+	.list{
+		width         : 100%;
+		height        : auto;
+		background    : $colorWhite;
+		border-top    : 2px solid $colorBorderGray;
+		border-bottom : 2px solid $colorBorderGray;
+		.item{
+			width         :  $designWidth - 40 + px;
+			height        :  $barHeight+px;
+			margin        :  0 auto;
+			border-bottom :  3px solid $colorInputBorderGray;
+			line-height   :  $barHeight+px;
+			font-size     :  $barFontsize/3*2+px;
+			&:last-child{
+				border-bottom : none;
+			}
+			label{
+				color   :  $colorLabelGray;
+				margin  :  0 10px;
+			}
+			input{
+				border     : none;
+				outline    : none;
+				background : none;
+				width      : $designWidth*0.6+px;
+				height     : $barHeight*0.8+px;   
+				text-indent: 40px;
+				&.verify{
+					text-indent :  15px;
+					width       :  $designWidth*0.4+px;
+				}
+			}
+			img{
+				margin-bottom:-$barHeight/4+px;
+			}
+		}
+		
+	}
+}
+
+.text{
+	font-size        :  $barFontsize/3*2+px;
+	text-decoration  :  none;
+	color            :  $colorLabelGray;
+	float            :  right;
+	margin-right     :  10px;
+	margin-top       :  20px;
+}
+.tip-box{
+	@extend .content;
+	.tip{
+		display      : block;
+		width        : $designWidth*0.6+px;
+		line-height  : $barHeight/4*3+px;
+		float        : left;  
+		color        : $colorWarnRed; 
+		font-size    : $barFontsize/1.6+px;
+		margin-left  : 20px;
+		background   : url(../imgs/icons/icon-err.png) no-repeat center left;
+		text-indent  : $barHeight/2+px;
+	}
+}
+.footer{
+	@include relative();
+	width      :  $designWidth+px;
+	height     :  auto;
+	text-align :  center;
 }

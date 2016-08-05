@@ -1,0 +1,27 @@
+{
+	"compiles":{
+		"css":{
+			"common":{
+				"from":"public/src/sass/*.scss",
+				"mid":"public/mid/css",
+				"to":"public/dist/css"
+			},
+			"login":{
+				"from":"public/src/sass/login/*.scss",
+				"mid":"public/mid/css",
+				"to":"public/dist/css"
+			}
+		
+		},
+		"scripts":{
+			"from":"public/src/scripts/common/*.js",
+			"mid":"public/mid/scripts",
+			"to":"public/dist/scripts"
+		},
+		"images":{
+			"from":"public/src/imgs/**/*.{jpeg,jpg,png,gif}",
+			"mid":"public/mid/imgs",
+			"to":"public/dist/imgs"
+		}
+	}
+}
