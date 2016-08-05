@@ -2,20 +2,34 @@ $designWidht:		640;
 $designHeight:		1136;
 $barHeigth:			88;
 $barFontsize:		36;
-
-.F-box{
+$colorWhite:		#ffffff;
+.Q-box{
 	visibility:hidden;
-	background:red;
-	.F-page{
+	.Q-page{
 		width:$designWidht+px;
 		height: $designHeight+px;
-		background:blue;
 	}
 }
 
+@mixin position($type,$left,$top){
+	position:$type;
+	left:$left+px;
+	top:$top+px;
+} 
+
+.fontStyle{
+	font-size:$barFontsize+px;
+	text-align:center;
+	line-height:$barHeigth+px;
+	color:$colorWhite;
+}
 
 .bar{
+	@include position(relative,0,0);
 	width:$designWidht+px;
 	height:$barHeigth+px;
-	background:green;
+	background:url(../imgs/icons/bg-bar.jpg) repeat-x;
+	.title{
+		@extend .fontStyle;
+	}
 }

@@ -4,13 +4,13 @@ var gulpMinifyCss = require('gulp-minify-css');
 var gulpConcat = require('gulp-concat');
 var gulpJshint = require('gulp-jshint');
 var gulpSass = require('gulp-sass');
+var gulpImagemin = require('gulp-imagemin');
 var gulpMinifyHtml = require('gulp-minify-html');
 var gulpRename = require('gulp-rename');
 var gulpAutoprefixer = require('gulp-autoprefixer');
 var gulpNotify = require('gulp-notify');
 var gulpClean = require('gulp-clean');
-
-// var cache = require('gulp-cache'),
+var gulpCache = require('gulp-cache');
 // var livereload = require('gulp-livereload');
 
 var pathObj = {
@@ -23,6 +23,11 @@ var pathObj = {
 		from:'public/src/scripts/common/*.js',
 		mid:'public/mid/scripts',
 		to:'public/dist/scripts'
+	},
+	images:{
+		from:'public/src/imgs/**/*.{jpeg,jpg,png,gif}',
+		mid:'public/mid/imgs',
+		to:'public/dist/imgs'
 	}
 }
 
@@ -59,15 +64,15 @@ gulp.task('scripts', function() {
 
 // 图片
 gulp.task('images', function() {  
-  // return gulp.src('src/images/**/*')
-  //   .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
-  //   .pipe(gulp.dest('dist/images'))
-  //   .pipe(notify({ message: 'Images task complete' }));
+  return gulp.src(pathObj.images.from)
+    .pipe(gulpCache(gulpImagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
+    .pipe(gulp.dest(pathObj.images.to))
+    .pipe(gulpNotify({ message: 'Images task complete' }));
 });
 
 
 gulp.task('default',['clean'], function(){
-	gulp.start('compileSass','scripts');
+	gulp.start('compileSass','scripts','images');
 });
 
 
@@ -79,7 +84,7 @@ gulp.task('watch', function() {
   gulp.watch(pathObj.css.from, ['compileSass']);
 
   // 看守所有.js档
- gulp.watch('public/scr/scripts/**/*.js', ['scripts']);
+ gulp.watch('public/src/scripts/**/*.js', ['scripts']);
 
   // 看守所有图片档
   //gulp.watch('src/images/**/*', ['images']);

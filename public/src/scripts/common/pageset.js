@@ -1,4 +1,8 @@
-(function($,window,designWidth){
-	$('.F-box').css({'width':window.innerWidth+'px','height':window.innerHeight+'px','visibility':'visible'});
-	$('.F-page').css('zoom',window.innerWidth/designWidth);
-})(Zepto,window,640);
+(function($, window, designWidth){
+	$('.Q-box').css({
+		'width' : window.innerWidth + 'px',
+		'height' : window.innerHeight+'px',
+		'visibility' : 'visible'
+	});
+	$('.Q-page').css('zoom',window.innerWidth / designWidth);
+})(Zepto, window, 640);

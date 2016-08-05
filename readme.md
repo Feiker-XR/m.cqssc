@@ -14,6 +14,7 @@
                 gulp-autoprefixer                   //浏览器前缀
                 gulp-notify                         //通知
                 gulp-clean                          //清理文件
+                gulp-cache                          //图片缓存
             --save-dev
     创建 gulpfile.js
 

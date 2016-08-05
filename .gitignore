@@ -2,3 +2,4 @@ node_modules/
 .idea/
 libs/
 public/dist/
+public/mid/
