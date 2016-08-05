@@ -25,11 +25,3 @@ $colorBtnBlue         :     #59b3a4;
 	display  : block;
 	position : absolute;
 }
-
-//标题栏的字体样式
-.fontStyle{
-	font-size   : $barFontsize+px;
-	text-align  : center;
-	line-height : $barHeight+px;
-	color       : $colorWhite;
-}

@@ -11,6 +11,14 @@
 	}
 }
 
+//标题栏的字体样式
+.fontStyle{
+	font-size   : $barFontsize+px;
+	text-align  : center;
+	line-height : $barHeight+px;
+	color       : $colorWhite;
+}
+
 //标题栏
 .bar{
 	@include relative();
@@ -21,6 +29,7 @@
 		@extend .fontStyle;
 	}
 }
+
 //图标
 .icon{
 	@include position();

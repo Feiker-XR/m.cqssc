@@ -15,7 +15,6 @@
 		line-height     :  $barHeight*3/2+px;
 		font-size       :  $barFontsize/1.25+px;
 		float           :  left;
-		// font-weight     :  bold;
 		margin          :  0 10px;
 		overflow        :  hidden;
 	}
@@ -34,4 +33,22 @@
 		color           :  $colorLoginGray;
 		margin-left     :  $barHeight/2+px;
 	}
+}
+
+.pretext{
+	width       :  $designWidth+px;
+	border-top  :  5px solid $colorBorderGray;
+	padding-top :  $barFontsize/2+px;
+	p{
+		font-size    : $barFontsize/3*2+px;
+		text-indent  : $barFontsize/2+px;
+		color        : $colorLabelGray;
+		line-height  : $barHeight/2+px; 
+		&:last-child{
+			margin-bottom: $barFontsize/2+px;
+		}
+		span{
+			color   : $colorLoginBule;	
+		}
+	}	
 }
