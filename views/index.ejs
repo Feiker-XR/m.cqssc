@@ -4,8 +4,8 @@
   	<meta charset="utf8">
   	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
     <title><%= title %></title>
-    <link rel='stylesheet' href='/mid/css/all.css' />
-    <link rel='stylesheet' href='/mid/css/login.css' />
+    <link rel='stylesheet' href='/dist/css/all.min.css' />
+    <link rel='stylesheet' href='/dist/css/login.min.css' />
   </head>
   <body>
 
@@ -17,70 +17,74 @@
     		</header>
     	<!--logo栏-->
 			<aside class="banner">
-				<i class="icon icon-level"></i>
+				<i class="icon icon-level" id="ids-icon-level"></i>
 				<ol class="ol-box">
-					<li class="active">普通登录</li>
-					<li>安全登陆</li>
+					<li class="active" clickid="btn-nml">普通登录</li>
+					<li clickid="btn-sec">安全登陆</li>
 				</ol>
 			</aside>
 		<!--普通登录-->
-    		<section class="content" style="display: block;">
+    		<section class="content">
 				<ul class="list">
 					<li class="item">
 						<label>账户</label>
-						<input type="text" placeholder="请输入您的账户名" maxlength="16" />
-						<i class="icon icon-exist"></i>
+						<input type="text" ph="请输入您的账户名" maxlength="16" id="ids-n-name"/>
+						<i class="icon icon-exist" id="ids-icon-exist"></i>
 					</li>
 					<li class="item">
 						<label>密码</label>
-						<input type="text" placeholder="请输入您的密码" />
+						<input type="password" ph="请输入您的密码" id="ids-n-pwd"/>
 					</li>
-					<!-- <li class="item">
+					<li class="item" style="display: block;">
 						<label>验证码</label>
-						<input type="text" placeholder="请输入验证码" class='verify' maxlength="4" />
-						<img src="/mid/imgs/changevcode.png" width='160' height='60'>
+						<input type="text" ph="请输入验证码" class='verify' maxlength="4" id="ids-n-code"/>
+						<img src="/login/changeCode" width='160' height='60'>
 						<i class="icon icon-new"></i>
-					</li> -->
+					</li>
 				</ul>
     		</section>
+
     	<!--安全登录-->
-    		<section class="content" style="display: none;">
-				<!-- <ul class="list">
+    		<section class="content">
+				<ul class="list">
 					<li class="item">
 						<label>账户</label>
-						<input type="text" placeholder="请输入您的账户名" maxlength="16" />
+						<input type="text" ph="请输入您的账户名" maxlength="16"  id="ids-s-name"/>
 						<i class="icon icon-exist"></i>
 					</li>
 					<li class="item">
 						<label>验证码</label>
-						<input type="text" placeholder="请输入验证码" class='verify' maxlength="4" />
-						<img src="/mid/imgs/changevcode.png" width='160' height='60'>
+						<input type="text" ph="请输入验证码" class='verify' maxlength="4" id="ids-s-code"/>
+						<img src="/dist/imgs/changevcode.png" width='160' height='60'>
 						<i class="icon icon-new"></i>
 					</li>
-				</ul> -->
-				<article class="pretext">
-					<div>
-						<p class="">您设置的预留信息为：<span>asds</span></p>
-						<p class="">若预留验证信与您设置不一致！ 请勿输入密码！</p>
-					</div>
-					<div>
-						<p class="">您尚未设置验证信息，请登录成功后前往安全中心设置!</p>
-					</div>
-				</article>
-				 <ul class="list">
-					<li class="item">
-						<label>密码</label>
-						<input type="text" placeholder="请输入您的密码" />
-					</li>
-				</ul>    	   				
+				</ul>
+			<!--输入密码-->
+				<div id="step2">
+					<article class="pretext">
+						<div id="info">
+							<p class="">您设置的预留信息为：<span>asds</span></p>
+							<p class="">若预留验证信与您设置不一致！ 请勿输入密码！</p>
+						</div>
+						<div id="noinfo">
+							<p class="">您尚未设置验证信息，请登录成功后前往安全中心设置!</p>
+						</div>
+					</article>
+					 <ul class="list">
+						<li class="item">
+							<label>密码</label>
+							<input type="password" ph="请输入您的密码" id="ids-s-pwd"/>
+						</li>
+					</ul>    	   
+				</div>								
     		</section>
     	<!--错误提示栏-->
     		<p class="tip-box">
-    			<i class="tip">这里是错误提示</i>
+    			<i class="tip" id="ids-tip">这里是错误提示</i>
     			<a class="text" href="#" title>忘记密码？</a>
     		</p>
 			<div class="btn-box">
-				<button class="btn btn-login">登录</button>
+				<button class="btn btn-login" clickid='btn-login'>登录</button>
 			</div>
     		<footer class="footer">
     			<a href="#">下载APP</a>
@@ -89,6 +93,7 @@
     </div>
 
     <script type="text/javascript" src="/libs/zepto/zepto.js"></script>
-    <script type="text/javascript" src='/mid/scripts/common.js'></script>
+    <script type="text/javascript" src='/dist/scripts/common.min.js'></script>
+    <script type="text/javascript" src='/dist/scripts/login.min.js'></script>
   </body>
 </html>

@@ -12,6 +12,7 @@ var gulpNotify          =  require('gulp-notify');
 var gulpClean           =  require('gulp-clean');
 var gulpCache           =  require('gulp-cache');
 var pathObj				=  require('./config.json')['compiles'];
+
 // var livereload = require('gulp-livereload');
 
 // var pathObj = {
@@ -52,7 +53,7 @@ gulp.task('commonSass',function(){
 		.pipe(gulpAutoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))		//浏览器前缀
 		.pipe(gulpSass({ style: 'expanded' }))																			//编译sass
 		.pipe(gulpConcat('all.css'))																					//合并文件
-		.pipe(gulp.dest(pathObj.css.common.mid))																		//输出
+		//.pipe(gulp.dest(pathObj.css.common.mid))																		//输出
 		.pipe(gulpRename({suffix: '.min'}))																				//重命名
 		.pipe(gulpMinifyCss())																							//压缩
 		.pipe(gulp.dest(pathObj.css.common.to))																			//再输出
@@ -64,7 +65,7 @@ gulp.task('loginSass',function(){
 		.pipe(gulpAutoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))		
 		.pipe(gulpSass({ style: 'expanded' }))																			
 		.pipe(gulpConcat('login.css'))																					
-		.pipe(gulp.dest(pathObj.css.login.mid))																		
+		//.pipe(gulp.dest(pathObj.css.login.mid))																		
 		.pipe(gulpRename({suffix: '.min'}))																				
 		.pipe(gulpMinifyCss())																							
 		.pipe(gulp.dest(pathObj.css.login.to))																			
@@ -72,16 +73,28 @@ gulp.task('loginSass',function(){
 });
 
 // 脚本
-gulp.task('scripts', function() {  
-  return gulp.src(pathObj.scripts.from)
+gulp.task('commonScripts', function() {  
+  return gulp.src(pathObj.scripts.common.from)
     .pipe(gulpJshint())
     .pipe(gulpConcat('common.js'))
-    .pipe(gulp.dest(pathObj.scripts.mid))
+    //.pipe(gulp.dest(pathObj.scripts.mid))
     .pipe(gulpRename({ suffix: '.min' }))
     .pipe(gulpUglify())
-    .pipe(gulp.dest(pathObj.scripts.to))
+    .pipe(gulp.dest(pathObj.scripts.common.to))
     .pipe(gulpNotify({ message: 'Scripts task complete' }));
 });
+
+gulp.task('loginScripts', function() {  
+  return gulp.src(pathObj.scripts.login.from)
+    .pipe(gulpJshint())
+    .pipe(gulpConcat('login.js'))
+    //.pipe(gulp.dest(pathObj.scripts.mid))
+    .pipe(gulpRename({ suffix: '.min' }))
+    .pipe(gulpUglify())
+    .pipe(gulp.dest(pathObj.scripts.login.to))
+    .pipe(gulpNotify({ message: 'Scripts task complete' }));
+});
+
 
 // 图片
 gulp.task('images', function() {  
@@ -94,9 +107,9 @@ gulp.task('images', function() {
 
 gulp.task('default',['clean'], function(){
 	//gulp.start('commonSass','loginSass','scripts','images');
-	gulp.start('commonSass','loginSass','scripts');
+	gulp.start('commonSass','loginSass','commonScripts','loginScripts','images');
 	gulp.watch('public/src/sass/**/*.scss', ['commonSass','loginSass']);
-	gulp.watch('public/src/scripts/**/*.js', ['scripts']);
+	gulp.watch('public/src/scripts/**/*.js', ['commonScripts','loginScripts']);
 });
  
 

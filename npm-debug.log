@@ -1,0 +1,751 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'c:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'ccap' ]
+2 info using npm@2.15.8
+3 info using node@v4.4.7
+4 verbose install initial load of C:\Users\Feaco\Desktop\m.cqssc\package.json
+5 verbose installManyTop reading scoped package data from C:\Users\Feaco\Desktop\m.cqssc\node_modules\body-parser\package.json
+6 verbose installManyTop reading scoped package data from C:\Users\Feaco\Desktop\m.cqssc\node_modules\bower\package.json
+7 verbose installManyTop reading scoped package data from C:\Users\Feaco\Desktop\m.cqssc\node_modules\cookie-parser\package.json
+8 verbose installManyTop reading scoped package data from C:\Users\Feaco\Desktop\m.cqssc\node_modules\debug\package.json
+9 verbose installManyTop reading scoped package data from C:\Users\Feaco\Desktop\m.cqssc\node_modules\ejs\package.json
+10 verbose installManyTop reading scoped package data from C:\Users\Feaco\Desktop\m.cqssc\node_modules\express\package.json
+11 verbose installManyTop reading scoped package data from C:\Users\Feaco\Desktop\m.cqssc\node_modules\gulp\package.json
+12 verbose installManyTop reading scoped package data from C:\Users\Feaco\Desktop\m.cqssc\node_modules\gulp-autoprefixer\package.json
+13 verbose installManyTop reading scoped package data from C:\Users\Feaco\Desktop\m.cqssc\node_modules\gulp-cache\package.json
+14 verbose installManyTop reading scoped package data from C:\Users\Feaco\Desktop\m.cqssc\node_modules\gulp-clean\package.json
+15 verbose installManyTop reading scoped package data from C:\Users\Feaco\Desktop\m.cqssc\node_modules\gulp-concat\package.json
+16 verbose installManyTop reading scoped package data from C:\Users\Feaco\Desktop\m.cqssc\node_modules\gulp-imagemin\package.json
+17 verbose installManyTop reading scoped package data from C:\Users\Feaco\Desktop\m.cqssc\node_modules\gulp-jshint\package.json
+18 verbose installManyTop reading scoped package data from C:\Users\Feaco\Desktop\m.cqssc\node_modules\gulp-minify-css\package.json
+19 verbose installManyTop reading scoped package data from C:\Users\Feaco\Desktop\m.cqssc\node_modules\gulp-minify-html\package.json
+20 verbose installManyTop reading scoped package data from C:\Users\Feaco\Desktop\m.cqssc\node_modules\gulp-notify\package.json
+21 verbose installManyTop reading scoped package data from C:\Users\Feaco\Desktop\m.cqssc\node_modules\gulp-rename\package.json
+22 verbose installManyTop reading scoped package data from C:\Users\Feaco\Desktop\m.cqssc\node_modules\gulp-sass\package.json
+23 verbose installManyTop reading scoped package data from C:\Users\Feaco\Desktop\m.cqssc\node_modules\gulp-uglify\package.json
+24 verbose installManyTop reading scoped package data from C:\Users\Feaco\Desktop\m.cqssc\node_modules\jshint\package.json
+25 verbose installManyTop reading scoped package data from C:\Users\Feaco\Desktop\m.cqssc\node_modules\morgan\package.json
+26 verbose installManyTop reading scoped package data from C:\Users\Feaco\Desktop\m.cqssc\node_modules\node-dev\package.json
+27 verbose installManyTop reading scoped package data from C:\Users\Feaco\Desktop\m.cqssc\node_modules\serve-favicon\package.json
+28 info package.json gulp-minify-css@1.2.4 No repository field.
+29 info package.json gulp-minify-html@1.0.6 No repository field.
+30 info package.json gulp-rename@1.2.2 No license field.
+31 info package.json gulp-notify@2.2.0 No license field.
+32 verbose readDependencies loading dependencies from C:\Users\Feaco\Desktop\m.cqssc\package.json
+33 silly cache add args [ 'ccap', null ]
+34 verbose cache add spec ccap
+35 silly cache add parsed spec Result {
+35 silly cache add   raw: 'ccap',
+35 silly cache add   scope: null,
+35 silly cache add   name: 'ccap',
+35 silly cache add   rawSpec: '',
+35 silly cache add   spec: 'latest',
+35 silly cache add   type: 'tag' }
+36 silly addNamed ccap@latest
+37 verbose addNamed "latest" is being treated as a dist-tag for ccap
+38 info addNameTag [ 'ccap', 'latest' ]
+39 silly mapToRegistry name ccap
+40 silly mapToRegistry using default registry
+41 silly mapToRegistry registry https://registry.npmjs.org/
+42 silly mapToRegistry data Result {
+42 silly mapToRegistry   raw: 'ccap',
+42 silly mapToRegistry   scope: null,
+42 silly mapToRegistry   name: 'ccap',
+42 silly mapToRegistry   rawSpec: '',
+42 silly mapToRegistry   spec: 'latest',
+42 silly mapToRegistry   type: 'tag' }
+43 silly mapToRegistry uri https://registry.npmjs.org/ccap
+44 verbose addNameTag registry:https://registry.npmjs.org/ccap not in flight; fetching
+45 verbose request uri https://registry.npmjs.org/ccap
+46 verbose request no auth needed
+47 info attempt registry request try #1 at 18:13:39
+48 verbose request id adca3a7ea3c0611e
+49 verbose etag "A99VG95UW2I62GQO945722GP3"
+50 http request GET https://registry.npmjs.org/ccap
+51 http 304 https://registry.npmjs.org/ccap
+52 verbose headers { date: 'Mon, 08 Aug 2016 10:13:43 GMT',
+52 verbose headers   via: '1.1 varnish',
+52 verbose headers   'cache-control': 'max-age=300',
+52 verbose headers   etag: '"A99VG95UW2I62GQO945722GP3"',
+52 verbose headers   age: '0',
+52 verbose headers   connection: 'keep-alive',
+52 verbose headers   'x-served-by': 'cache-hkg6826-HKG',
+52 verbose headers   'x-cache': 'HIT',
+52 verbose headers   'x-cache-hits': '1',
+52 verbose headers   'x-timer': 'S1470651223.314223,VS0,VE923',
+52 verbose headers   vary: 'Accept-Encoding' }
+53 silly get cb [ 304,
+53 silly get   { date: 'Mon, 08 Aug 2016 10:13:43 GMT',
+53 silly get     via: '1.1 varnish',
+53 silly get     'cache-control': 'max-age=300',
+53 silly get     etag: '"A99VG95UW2I62GQO945722GP3"',
+53 silly get     age: '0',
+53 silly get     connection: 'keep-alive',
+53 silly get     'x-served-by': 'cache-hkg6826-HKG',
+53 silly get     'x-cache': 'HIT',
+53 silly get     'x-cache-hits': '1',
+53 silly get     'x-timer': 'S1470651223.314223,VS0,VE923',
+53 silly get     vary: 'Accept-Encoding' } ]
+54 verbose etag https://registry.npmjs.org/ccap from cache
+55 verbose get saving ccap to C:\Users\Feaco\AppData\Roaming\npm-cache\registry.npmjs.org\ccap\.cache.json
+56 verbose correctMkdir C:\Users\Feaco\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+57 silly addNameTag next cb for ccap with tag latest
+58 silly addNamed ccap@0.6.10
+59 verbose addNamed "0.6.10" is a plain semver version for ccap
+60 silly cache afterAdd ccap@0.6.10
+61 verbose afterAdd C:\Users\Feaco\AppData\Roaming\npm-cache\ccap\0.6.10\package\package.json not in flight; writing
+62 verbose correctMkdir C:\Users\Feaco\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+63 verbose afterAdd C:\Users\Feaco\AppData\Roaming\npm-cache\ccap\0.6.10\package\package.json written
+64 silly install resolved [ { author:
+64 silly install resolved      { name: 'doublespout',
+64 silly install resolved        email: 'snoopyxdy@163.com',
+64 silly install resolved        url: 'http://snoopyxdy.blog.163.com' },
+64 silly install resolved     name: 'ccap',
+64 silly install resolved     description: 'node.js generate captcha using c++ library CImg without install any other lib or software',
+64 silly install resolved     keywords: [ 'node', 'captcha', 'c++', 'image', 'CImg' ],
+64 silly install resolved     version: '0.6.10',
+64 silly install resolved     url: 'https://github.com/DoubleSpout/ccap',
+64 silly install resolved     homepage: 'https://github.com/DoubleSpout/ccap',
+64 silly install resolved     repository:
+64 silly install resolved      { type: 'git',
+64 silly install resolved        url: 'git+https://github.com/DoubleSpout/ccap.git' },
+64 silly install resolved     main: 'index.js',
+64 silly install resolved     engines: { node: '>=0.12.0' },
+64 silly install resolved     scripts:
+64 silly install resolved      { preinstall: 'node make.js',
+64 silly install resolved        install: 'node-gyp rebuild',
+64 silly install resolved        test: 'node ./test/main_test.js' },
+64 silly install resolved     gypfile: true,
+64 silly install resolved     _id: 'ccap@0.6.10',
+64 silly install resolved     _from: 'ccap@latest',
+64 silly install resolved     dist:
+64 silly install resolved      { shasum: '008fd555bf7e77ace265f99f4e10939bb8c1ac48',
+64 silly install resolved        tarball: 'https://registry.npmjs.org/ccap/-/ccap-0.6.10.tgz' },
+64 silly install resolved     dependencies: { async: '1.4.2', 'node-schedule': '0.1.13', nan: '1.7.0' },
+64 silly install resolved     _resolved: 'https://registry.npmjs.org/ccap/-/ccap-0.6.10.tgz',
+64 silly install resolved     gitHead: 'fa3e7b8f21792b5dfa7719a607f392253dcc5c34',
+64 silly install resolved     bugs: { url: 'https://github.com/DoubleSpout/ccap/issues' },
+64 silly install resolved     _shasum: '008fd555bf7e77ace265f99f4e10939bb8c1ac48',
+64 silly install resolved     _npmVersion: '2.11.3',
+64 silly install resolved     _nodeVersion: '0.12.7',
+64 silly install resolved     _npmUser: { name: 'doublespout', email: 'snoopyxdy@gmail.com' },
+64 silly install resolved     maintainers: [ [Object] ],
+64 silly install resolved     _npmOperationalInternal:
+64 silly install resolved      { host: 'packages-12-west.internal.npmjs.com',
+64 silly install resolved        tmp: 'tmp/ccap-0.6.10.tgz_1467802425437_0.5992555178236216' },
+64 silly install resolved     directories: {},
+64 silly install resolved     readme: 'ERROR: No README data found!' } ]
+65 info install ccap@0.6.10 into C:\Users\Feaco\Desktop\m.cqssc
+66 info installOne ccap@0.6.10
+67 verbose installOne of ccap to C:\Users\Feaco\Desktop\m.cqssc not in flight; installing
+68 verbose correctMkdir C:\Users\Feaco\AppData\Roaming\npm-cache\_locks correctMkdir not in flight; initializing
+69 verbose lock using C:\Users\Feaco\AppData\Roaming\npm-cache\_locks\ccap-d4b191b492155bb2.lock for C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap
+70 silly install write writing ccap 0.6.10 to C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap
+71 verbose unbuild node_modules\ccap
+72 silly gentlyRm C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap is being purged from base C:\Users\Feaco\Desktop\m.cqssc
+73 verbose gentlyRm don't care about contents; nuking C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap
+74 verbose tar unpack C:\Users\Feaco\AppData\Roaming\npm-cache\ccap\0.6.10\package.tgz
+75 verbose tar unpacking to C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap
+76 silly gentlyRm C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap is being purged
+77 verbose gentlyRm don't care about contents; nuking C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap
+78 silly gunzTarPerm modes [ '777', '666' ]
+79 silly gunzTarPerm extractEntry package.json
+80 silly gunzTarPerm extractEntry .npmignore
+81 silly gunzTarPerm extractEntry index.js
+82 silly gunzTarPerm extractEntry make.js
+83 silly gunzTarPerm extractEntry example/custom_get.js
+84 silly gunzTarPerm extractEntry example/custom_get2.js
+85 silly gunzTarPerm extractEntry example/default_get.js
+86 silly gunzTarPerm extractEntry example/web_example.js
+87 silly gunzTarPerm extractEntry binding.gyp
+88 silly gunzTarPerm extractEntry .travis.yml
+89 silly gunzTarPerm extractEntry lib/dir.js
+90 silly gunzTarPerm extractEntry lib/gen.js
+91 silly gunzTarPerm extractEntry lib/hcap.js
+92 silly gunzTarPerm extractEntry lib/timer.js
+93 silly gunzTarPerm extractEntry addon/cap.cc
+94 silly gunzTarPerm extractEntry addon/cap.h
+95 silly gunzTarPerm extractEntry addon/hcaptha.cc
+96 silly gunzTarPerm extractEntry addon/jpeglib/jddctmgr.c
+97 silly gunzTarPerm extractEntry addon/jpeglib/CImg.h
+98 silly gunzTarPerm extractEntry addon/jpeglib/Licence_CeCILL_V2-en.txt
+99 silly gunzTarPerm extractEntry addon/jpeglib/README.txt
+100 silly gunzTarPerm extractEntry addon/jpeglib/cderror.h
+101 silly gunzTarPerm extractEntry addon/jpeglib/cdjpeg.h
+102 silly gunzTarPerm extractEntry addon/jpeglib/jaricom.c
+103 silly gunzTarPerm extractEntry addon/jpeglib/jcapimin.c
+104 silly gunzTarPerm extractEntry addon/jpeglib/jcapistd.c
+105 silly gunzTarPerm extractEntry addon/jpeglib/jcarith.c
+106 silly gunzTarPerm extractEntry addon/jpeglib/jccoefct.c
+107 silly gunzTarPerm extractEntry addon/jpeglib/jccolor.c
+108 silly gunzTarPerm extractEntry addon/jpeglib/jcdctmgr.c
+109 silly gunzTarPerm extractEntry addon/jpeglib/jchuff.c
+110 silly gunzTarPerm extractEntry addon/jpeglib/jcinit.c
+111 silly gunzTarPerm extractEntry addon/jpeglib/jcmainct.c
+112 silly gunzTarPerm extractEntry addon/jpeglib/jcmarker.c
+113 silly gunzTarPerm extractEntry addon/jpeglib/jcmaster.c
+114 silly gunzTarPerm extractEntry addon/jpeglib/jcomapi.c
+115 silly gunzTarPerm extractEntry addon/jpeglib/jconfig.h
+116 silly gunzTarPerm extractEntry addon/jpeglib/jcparam.c
+117 silly gunzTarPerm extractEntry addon/jpeglib/jcprepct.c
+118 silly gunzTarPerm extractEntry addon/jpeglib/jcsample.c
+119 silly gunzTarPerm extractEntry addon/jpeglib/jctrans.c
+120 silly gunzTarPerm extractEntry addon/jpeglib/jdapimin.c
+121 silly gunzTarPerm extractEntry addon/jpeglib/jdapistd.c
+122 silly gunzTarPerm extractEntry addon/jpeglib/jdarith.c
+123 silly gunzTarPerm extractEntry addon/jpeglib/jdatadst.c
+124 silly gunzTarPerm extractEntry addon/jpeglib/jdatasrc.c
+125 silly gunzTarPerm extractEntry addon/jpeglib/jdcoefct.c
+126 silly gunzTarPerm extractEntry addon/jpeglib/jdcolor.c
+127 silly gunzTarPerm extractEntry addon/jpeglib/jdct.h
+128 silly gunzTarPerm extractEntry addon/jpeglib/Licence_CeCILL-C_V1-en.txt
+129 silly gunzTarPerm extractEntry addon/jpeglib/jdhuff.c
+130 silly gunzTarPerm extractEntry addon/jpeglib/jdinput.c
+131 silly gunzTarPerm extractEntry addon/jpeglib/jdmainct.c
+132 silly gunzTarPerm extractEntry addon/jpeglib/jdmarker.c
+133 silly gunzTarPerm extractEntry addon/jpeglib/jdmaster.c
+134 silly gunzTarPerm extractEntry addon/jpeglib/jdmerge.c
+135 silly gunzTarPerm extractEntry addon/jpeglib/jdpostct.c
+136 silly gunzTarPerm extractEntry addon/jpeglib/jdsample.c
+137 silly gunzTarPerm extractEntry addon/jpeglib/jdtrans.c
+138 silly gunzTarPerm extractEntry addon/jpeglib/jerror.c
+139 silly gunzTarPerm extractEntry addon/jpeglib/jerror.h
+140 silly gunzTarPerm extractEntry addon/jpeglib/jfdctflt.c
+141 silly gunzTarPerm extractEntry addon/jpeglib/jfdctfst.c
+142 silly gunzTarPerm extractEntry addon/jpeglib/jfdctint.c
+143 silly gunzTarPerm extractEntry addon/jpeglib/jidctflt.c
+144 silly gunzTarPerm extractEntry addon/jpeglib/jidctfst.c
+145 silly gunzTarPerm extractEntry addon/jpeglib/jidctint.c
+146 silly gunzTarPerm extractEntry addon/jpeglib/jinclude.h
+147 silly gunzTarPerm extractEntry addon/jpeglib/jmemmgr.c
+148 silly gunzTarPerm extractEntry addon/jpeglib/jmemnobs.c
+149 silly gunzTarPerm extractEntry addon/jpeglib/jmemsys.h
+150 silly gunzTarPerm extractEntry addon/jpeglib/jmorecfg.h
+151 silly gunzTarPerm extractEntry addon/jpeglib/jpegint.h
+152 silly gunzTarPerm extractEntry addon/jpeglib/jpeglib.h
+153 silly gunzTarPerm extractEntry addon/jpeglib/jquant1.c
+154 silly gunzTarPerm extractEntry addon/jpeglib/jquant2.c
+155 silly gunzTarPerm extractEntry addon/jpeglib/jutils.c
+156 silly gunzTarPerm extractEntry addon/jpeglib/jversion.h
+157 silly gunzTarPerm extractEntry addon/jpeglib/libjpeg.so
+158 silly gunzTarPerm extractEntry addon/jpeglib/plugins/jpeg_buffer.h
+159 silly gunzTarPerm extractEntry addon/jpeglib/plugins/add_fileformat.h
+160 silly gunzTarPerm extractEntry addon/jpeglib/plugins/cimg_ipl.h
+161 silly gunzTarPerm extractEntry addon/jpeglib/plugins/cimgmatlab.h
+162 silly gunzTarPerm extractEntry addon/jpeglib/plugins/draw_gradient.h
+163 silly gunzTarPerm extractEntry addon/jpeglib/plugins/cimgIPL.h
+164 silly gunzTarPerm extractEntry addon/jpeglib/plugins/loop_macros.h
+165 silly gunzTarPerm extractEntry addon/jpeglib/plugins/nlmeans.h
+166 silly gunzTarPerm extractEntry addon/jpeglib/plugins/skeleton.h
+167 silly gunzTarPerm extractEntry addon/jpeglib/plugins/vrml.h
+168 silly gunzTarPerm extractEntry addon/jpeglib/plugins/vtk.h
+169 silly gunzTarPerm extractEntry addon/jpeglib/resources/compile_win_icl.bat
+170 silly gunzTarPerm extractEntry addon/jpeglib/resources/compile_win_visualcpp.bat
+171 silly gunzTarPerm extractEntry addon/jpeglib/transupp.h
+172 silly gunzTarPerm extractEntry addon/libjpeg.dll
+173 silly gunzTarPerm extractEntry benchmark/generate.js
+174 silly gunzTarPerm extractEntry readme.md
+175 silly gunzTarPerm extractEntry test/main_test.js
+176 verbose write writing to C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap\package.json
+177 info preinstall ccap@0.6.10
+178 verbose unsafe-perm in lifecycle true
+179 verbose readDependencies loading dependencies from C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap\package.json
+180 silly prepareForInstallMany adding async@1.4.2 from ccap dependencies
+181 silly prepareForInstallMany adding node-schedule@0.1.13 from ccap dependencies
+182 silly prepareForInstallMany adding nan@1.7.0 from ccap dependencies
+183 verbose readDependencies loading dependencies from C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap\package.json
+184 silly cache add args [ 'node-schedule@0.1.13', null ]
+185 verbose cache add spec node-schedule@0.1.13
+186 silly cache add parsed spec Result {
+186 silly cache add   raw: 'node-schedule@0.1.13',
+186 silly cache add   scope: null,
+186 silly cache add   name: 'node-schedule',
+186 silly cache add   rawSpec: '0.1.13',
+186 silly cache add   spec: '0.1.13',
+186 silly cache add   type: 'version' }
+187 silly addNamed node-schedule@0.1.13
+188 verbose addNamed "0.1.13" is a plain semver version for node-schedule
+189 silly mapToRegistry name node-schedule
+190 silly mapToRegistry using default registry
+191 silly mapToRegistry registry https://registry.npmjs.org/
+192 silly mapToRegistry data Result {
+192 silly mapToRegistry   raw: 'node-schedule',
+192 silly mapToRegistry   scope: null,
+192 silly mapToRegistry   name: 'node-schedule',
+192 silly mapToRegistry   rawSpec: '',
+192 silly mapToRegistry   spec: 'latest',
+192 silly mapToRegistry   type: 'tag' }
+193 silly mapToRegistry uri https://registry.npmjs.org/node-schedule
+194 verbose addNameVersion registry:https://registry.npmjs.org/node-schedule not in flight; fetching
+195 silly cache add args [ 'nan@1.7.0', null ]
+196 verbose cache add spec nan@1.7.0
+197 silly cache add parsed spec Result {
+197 silly cache add   raw: 'nan@1.7.0',
+197 silly cache add   scope: null,
+197 silly cache add   name: 'nan',
+197 silly cache add   rawSpec: '1.7.0',
+197 silly cache add   spec: '1.7.0',
+197 silly cache add   type: 'version' }
+198 silly addNamed nan@1.7.0
+199 verbose addNamed "1.7.0" is a plain semver version for nan
+200 silly mapToRegistry name nan
+201 silly mapToRegistry using default registry
+202 silly mapToRegistry registry https://registry.npmjs.org/
+203 silly mapToRegistry data Result {
+203 silly mapToRegistry   raw: 'nan',
+203 silly mapToRegistry   scope: null,
+203 silly mapToRegistry   name: 'nan',
+203 silly mapToRegistry   rawSpec: '',
+203 silly mapToRegistry   spec: 'latest',
+203 silly mapToRegistry   type: 'tag' }
+204 silly mapToRegistry uri https://registry.npmjs.org/nan
+205 verbose addNameVersion registry:https://registry.npmjs.org/nan not in flight; fetching
+206 silly cache add args [ 'async@1.4.2', null ]
+207 verbose cache add spec async@1.4.2
+208 silly cache add parsed spec Result {
+208 silly cache add   raw: 'async@1.4.2',
+208 silly cache add   scope: null,
+208 silly cache add   name: 'async',
+208 silly cache add   rawSpec: '1.4.2',
+208 silly cache add   spec: '1.4.2',
+208 silly cache add   type: 'version' }
+209 silly addNamed async@1.4.2
+210 verbose addNamed "1.4.2" is a plain semver version for async
+211 silly mapToRegistry name async
+212 silly mapToRegistry using default registry
+213 silly mapToRegistry registry https://registry.npmjs.org/
+214 silly mapToRegistry data Result {
+214 silly mapToRegistry   raw: 'async',
+214 silly mapToRegistry   scope: null,
+214 silly mapToRegistry   name: 'async',
+214 silly mapToRegistry   rawSpec: '',
+214 silly mapToRegistry   spec: 'latest',
+214 silly mapToRegistry   type: 'tag' }
+215 silly mapToRegistry uri https://registry.npmjs.org/async
+216 verbose addNameVersion registry:https://registry.npmjs.org/async not in flight; fetching
+217 verbose request uri https://registry.npmjs.org/node-schedule
+218 verbose request no auth needed
+219 info attempt registry request try #1 at 18:13:41
+220 verbose etag "8M6VU58TG1SA4RPILVJ648CF9"
+221 http request GET https://registry.npmjs.org/node-schedule
+222 verbose request uri https://registry.npmjs.org/nan
+223 verbose request no auth needed
+224 info attempt registry request try #1 at 18:13:41
+225 verbose etag "EGTR1APXEV7TH8V3QYT0WN357"
+226 http request GET https://registry.npmjs.org/nan
+227 verbose request uri https://registry.npmjs.org/async
+228 verbose request no auth needed
+229 info attempt registry request try #1 at 18:13:41
+230 verbose etag "C06PRN4VTFD67OSPPGSO7TITL"
+231 http request GET https://registry.npmjs.org/async
+232 http 304 https://registry.npmjs.org/nan
+233 verbose headers { date: 'Mon, 08 Aug 2016 10:13:45 GMT',
+233 verbose headers   via: '1.1 varnish',
+233 verbose headers   'cache-control': 'max-age=300',
+233 verbose headers   etag: '"EGTR1APXEV7TH8V3QYT0WN357"',
+233 verbose headers   age: '177',
+233 verbose headers   connection: 'keep-alive',
+233 verbose headers   'x-served-by': 'cache-hkg6823-HKG',
+233 verbose headers   'x-cache': 'HIT',
+233 verbose headers   'x-cache-hits': '7',
+233 verbose headers   'x-timer': 'S1470651225.060196,VS0,VE0',
+233 verbose headers   vary: 'Accept-Encoding' }
+234 silly get cb [ 304,
+234 silly get   { date: 'Mon, 08 Aug 2016 10:13:45 GMT',
+234 silly get     via: '1.1 varnish',
+234 silly get     'cache-control': 'max-age=300',
+234 silly get     etag: '"EGTR1APXEV7TH8V3QYT0WN357"',
+234 silly get     age: '177',
+234 silly get     connection: 'keep-alive',
+234 silly get     'x-served-by': 'cache-hkg6823-HKG',
+234 silly get     'x-cache': 'HIT',
+234 silly get     'x-cache-hits': '7',
+234 silly get     'x-timer': 'S1470651225.060196,VS0,VE0',
+234 silly get     vary: 'Accept-Encoding' } ]
+235 verbose etag https://registry.npmjs.org/nan from cache
+236 verbose get saving nan to C:\Users\Feaco\AppData\Roaming\npm-cache\registry.npmjs.org\nan\.cache.json
+237 verbose correctMkdir C:\Users\Feaco\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+238 http 304 https://registry.npmjs.org/async
+239 verbose headers { date: 'Mon, 08 Aug 2016 10:13:45 GMT',
+239 verbose headers   via: '1.1 varnish',
+239 verbose headers   'cache-control': 'max-age=300',
+239 verbose headers   etag: '"C06PRN4VTFD67OSPPGSO7TITL"',
+239 verbose headers   age: '225',
+239 verbose headers   connection: 'keep-alive',
+239 verbose headers   'x-served-by': 'cache-hkg6820-HKG',
+239 verbose headers   'x-cache': 'HIT',
+239 verbose headers   'x-cache-hits': '20',
+239 verbose headers   'x-timer': 'S1470651225.059194,VS0,VE0',
+239 verbose headers   vary: 'Accept-Encoding' }
+240 silly get cb [ 304,
+240 silly get   { date: 'Mon, 08 Aug 2016 10:13:45 GMT',
+240 silly get     via: '1.1 varnish',
+240 silly get     'cache-control': 'max-age=300',
+240 silly get     etag: '"C06PRN4VTFD67OSPPGSO7TITL"',
+240 silly get     age: '225',
+240 silly get     connection: 'keep-alive',
+240 silly get     'x-served-by': 'cache-hkg6820-HKG',
+240 silly get     'x-cache': 'HIT',
+240 silly get     'x-cache-hits': '20',
+240 silly get     'x-timer': 'S1470651225.059194,VS0,VE0',
+240 silly get     vary: 'Accept-Encoding' } ]
+241 verbose etag https://registry.npmjs.org/async from cache
+242 verbose get saving async to C:\Users\Feaco\AppData\Roaming\npm-cache\registry.npmjs.org\async\.cache.json
+243 verbose correctMkdir C:\Users\Feaco\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+244 silly cache afterAdd nan@1.7.0
+245 verbose afterAdd C:\Users\Feaco\AppData\Roaming\npm-cache\nan\1.7.0\package\package.json not in flight; writing
+246 verbose correctMkdir C:\Users\Feaco\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+247 silly cache afterAdd async@1.4.2
+248 verbose afterAdd C:\Users\Feaco\AppData\Roaming\npm-cache\async\1.4.2\package\package.json not in flight; writing
+249 verbose correctMkdir C:\Users\Feaco\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+250 verbose afterAdd C:\Users\Feaco\AppData\Roaming\npm-cache\nan\1.7.0\package\package.json written
+251 verbose afterAdd C:\Users\Feaco\AppData\Roaming\npm-cache\async\1.4.2\package\package.json written
+252 http 304 https://registry.npmjs.org/node-schedule
+253 verbose headers { date: 'Mon, 08 Aug 2016 10:13:44 GMT',
+253 verbose headers   via: '1.1 varnish',
+253 verbose headers   'cache-control': 'max-age=300',
+253 verbose headers   etag: '"8M6VU58TG1SA4RPILVJ648CF9"',
+253 verbose headers   age: '0',
+253 verbose headers   connection: 'keep-alive',
+253 verbose headers   'x-served-by': 'cache-hkg6826-HKG',
+253 verbose headers   'x-cache': 'MISS',
+253 verbose headers   'x-cache-hits': '0',
+253 verbose headers   'x-timer': 'S1470651224.991151,VS0,VE864',
+253 verbose headers   vary: 'Accept-Encoding' }
+254 silly get cb [ 304,
+254 silly get   { date: 'Mon, 08 Aug 2016 10:13:44 GMT',
+254 silly get     via: '1.1 varnish',
+254 silly get     'cache-control': 'max-age=300',
+254 silly get     etag: '"8M6VU58TG1SA4RPILVJ648CF9"',
+254 silly get     age: '0',
+254 silly get     connection: 'keep-alive',
+254 silly get     'x-served-by': 'cache-hkg6826-HKG',
+254 silly get     'x-cache': 'MISS',
+254 silly get     'x-cache-hits': '0',
+254 silly get     'x-timer': 'S1470651224.991151,VS0,VE864',
+254 silly get     vary: 'Accept-Encoding' } ]
+255 verbose etag https://registry.npmjs.org/node-schedule from cache
+256 verbose get saving node-schedule to C:\Users\Feaco\AppData\Roaming\npm-cache\registry.npmjs.org\node-schedule\.cache.json
+257 verbose correctMkdir C:\Users\Feaco\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+258 silly cache afterAdd node-schedule@0.1.13
+259 verbose afterAdd C:\Users\Feaco\AppData\Roaming\npm-cache\node-schedule\0.1.13\package\package.json not in flight; writing
+260 verbose correctMkdir C:\Users\Feaco\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+261 verbose afterAdd C:\Users\Feaco\AppData\Roaming\npm-cache\node-schedule\0.1.13\package\package.json written
+262 silly install resolved [ { name: 'nan',
+262 silly install resolved     version: '1.7.0',
+262 silly install resolved     description: 'Native Abstractions for Node.js: C++ header for Node 0.8->0.12 compatibility',
+262 silly install resolved     main: 'include_dirs.js',
+262 silly install resolved     repository: { type: 'git', url: 'git://github.com/rvagg/nan.git' },
+262 silly install resolved     scripts:
+262 silly install resolved      { test: 'tap --gc test/js/*-test.js',
+262 silly install resolved        'rebuild-tests': 'pangyp rebuild --directory test' },
+262 silly install resolved     contributors:
+262 silly install resolved      [ [Object],
+262 silly install resolved        [Object],
+262 silly install resolved        [Object],
+262 silly install resolved        [Object],
+262 silly install resolved        [Object],
+262 silly install resolved        [Object],
+262 silly install resolved        [Object] ],
+262 silly install resolved     devDependencies:
+262 silly install resolved      { bindings: '~1.2.1',
+262 silly install resolved        'node-gyp': '~1.0.2',
+262 silly install resolved        pangyp: '~2.0.1',
+262 silly install resolved        tap: '~0.5.0',
+262 silly install resolved        xtend: '~4.0.0' },
+262 silly install resolved     license: 'MIT',
+262 silly install resolved     gitHead: '550efb5dde5cb6bf79db87ab48dce850e56e971a',
+262 silly install resolved     bugs: { url: 'https://github.com/rvagg/nan/issues' },
+262 silly install resolved     homepage: 'https://github.com/rvagg/nan',
+262 silly install resolved     _id: 'nan@1.7.0',
+262 silly install resolved     _shasum: '755b997404e83cbe7bc08bc3c5c56291bce87438',
+262 silly install resolved     _from: 'nan@1.7.0',
+262 silly install resolved     _npmVersion: '2.5.1',
+262 silly install resolved     _nodeVersion: '0.12.0',
+262 silly install resolved     _npmUser: { name: 'kkoopa', email: 'bbyholm@abo.fi' },
+262 silly install resolved     maintainers: [ [Object], [Object] ],
+262 silly install resolved     dist:
+262 silly install resolved      { shasum: '755b997404e83cbe7bc08bc3c5c56291bce87438',
+262 silly install resolved        tarball: 'https://registry.npmjs.org/nan/-/nan-1.7.0.tgz' },
+262 silly install resolved     directories: {},
+262 silly install resolved     _resolved: 'https://registry.npmjs.org/nan/-/nan-1.7.0.tgz',
+262 silly install resolved     readme: 'ERROR: No README data found!' },
+262 silly install resolved   { name: 'async',
+262 silly install resolved     description: 'Higher-order functions and common patterns for asynchronous code',
+262 silly install resolved     main: 'lib/async.js',
+262 silly install resolved     files: [ 'lib' ],
+262 silly install resolved     author: { name: 'Caolan McMahon' },
+262 silly install resolved     version: '1.4.2',
+262 silly install resolved     keywords: [ 'async', 'callback', 'utility', 'module' ],
+262 silly install resolved     repository: { type: 'git', url: 'git+https://github.com/caolan/async.git' },
+262 silly install resolved     bugs: { url: 'https://github.com/caolan/async/issues' },
+262 silly install resolved     license: 'MIT',
+262 silly install resolved     devDependencies:
+262 silly install resolved      { benchmark: 'github:bestiejs/benchmark.js',
+262 silly install resolved        bluebird: '^2.9.32',
+262 silly install resolved        chai: '^3.1.0',
+262 silly install resolved        coveralls: '^2.11.2',
+262 silly install resolved        'es6-promise': '^2.3.0',
+262 silly install resolved        jscs: '^1.13.1',
+262 silly install resolved        jshint: '~2.8.0',
+262 silly install resolved        karma: '^0.13.2',
+262 silly install resolved        'karma-browserify': '^4.2.1',
+262 silly install resolved        'karma-firefox-launcher': '^0.1.6',
+262 silly install resolved        'karma-mocha': '^0.2.0',
+262 silly install resolved        'karma-mocha-reporter': '^1.0.2',
+262 silly install resolved        lodash: '^3.9.0',
+262 silly install resolved        mkdirp: '~0.5.1',
+262 silly install resolved        mocha: '^2.2.5',
+262 silly install resolved        'native-promise-only': '^0.8.0-a',
+262 silly install resolved        nodeunit: '>0.0.0',
+262 silly install resolved        nyc: '^2.1.0',
+262 silly install resolved        rsvp: '^3.0.18',
+262 silly install resolved        'uglify-js': '~2.4.0',
+262 silly install resolved        xyz: '^0.5.0',
+262 silly install resolved        yargs: '~3.9.1' },
+262 silly install resolved     jam: { main: 'lib/async.js', include: [Object], categories: [Object] },
+262 silly install resolved     scripts:
+262 silly install resolved      { 'mocha-node-test': 'mocha mocha_test/',
+262 silly install resolved        'mocha-browser-test': 'karma start',
+262 silly install resolved        'mocha-test': 'npm run mocha-node-test && npm run mocha-browser-test',
+262 silly install resolved        'nodeunit-test': 'nodeunit test/test-async.js',
+262 silly install resolved        test: 'npm run-script lint && npm run nodeunit-test && npm run mocha-test',
+262 silly install resolved        lint: 'jshint lib/*.js test/*.js perf/*.js && jscs lib/*.js test/*.js perf/*.js',
+262 silly install resolved        coverage: 'nyc npm test && nyc report',
+262 silly install resolved        coveralls: 'nyc npm test && nyc report --reporter=text-lcov | coveralls' },
+262 silly install resolved     spm: { main: 'lib/async.js' },
+262 silly install resolved     volo: { main: 'lib/async.js', ignore: [Object] },
+262 silly install resolved     gitHead: '92f78aebad222d60c13e4299c0e723f2fe2d6611',
+262 silly install resolved     homepage: 'https://github.com/caolan/async#readme',
+262 silly install resolved     _id: 'async@1.4.2',
+262 silly install resolved     _shasum: '6c9edcb11ced4f0dd2f2d40db0d49a109c088aab',
+262 silly install resolved     _from: 'async@1.4.2',
+262 silly install resolved     _npmVersion: '2.9.0',
+262 silly install resolved     _nodeVersion: '2.0.1',
+262 silly install resolved     _npmUser: { name: 'megawac', email: 'megawac@gmail.com' },
+262 silly install resolved     dist:
+262 silly install resolved      { shasum: '6c9edcb11ced4f0dd2f2d40db0d49a109c088aab',
+262 silly install resolved        tarball: 'https://registry.npmjs.org/async/-/async-1.4.2.tgz' },
+262 silly install resolved     maintainers: [ [Object], [Object], [Object], [Object] ],
+262 silly install resolved     directories: {},
+262 silly install resolved     _resolved: 'https://registry.npmjs.org/async/-/async-1.4.2.tgz',
+262 silly install resolved     readme: 'ERROR: No README data found!' },
+262 silly install resolved   { name: 'node-schedule',
+262 silly install resolved     version: '0.1.13',
+262 silly install resolved     description: 'A cron-like and not-cron-like job scheduler for Node.',
+262 silly install resolved     keywords: [ 'schedule', 'task', 'job', 'cron' ],
+262 silly install resolved     author:
+262 silly install resolved      { name: 'Matt Patenaude',
+262 silly install resolved        email: 'matt@mattpatenaude.com',
+262 silly install resolved        url: 'http://mattpatenaude.com' },
+262 silly install resolved     main: './lib/schedule.js',
+262 silly install resolved     scripts: { test: 'nodeunit test' },
+262 silly install resolved     repository:
+262 silly install resolved      { type: 'git',
+262 silly install resolved        url: 'git+https://github.com/mattpat/node-schedule.git' },
+262 silly install resolved     devDependencies: { nodeunit: '~0.8.1' },
+262 silly install resolved     bugs: { url: 'https://github.com/mattpat/node-schedule/issues' },
+262 silly install resolved     _id: 'node-schedule@0.1.13',
+262 silly install resolved     dist:
+262 silly install resolved      { shasum: '6370ce11c87ff13dfc2c4163e393872ec2a8ee80',
+262 silly install resolved        tarball: 'https://registry.npmjs.org/node-schedule/-/node-schedule-0.1.13.tgz' },
+262 silly install resolved     _from: 'node-schedule@0.1.13',
+262 silly install resolved     _npmVersion: '1.3.11',
+262 silly install resolved     _npmUser: { name: 'mattpat', email: 'matt@mattpatenaude.com' },
+262 silly install resolved     maintainers: [ [Object] ],
+262 silly install resolved     directories: {},
+262 silly install resolved     _shasum: '6370ce11c87ff13dfc2c4163e393872ec2a8ee80',
+262 silly install resolved     _resolved: 'https://registry.npmjs.org/node-schedule/-/node-schedule-0.1.13.tgz',
+262 silly install resolved     readme: 'ERROR: No README data found!',
+262 silly install resolved     homepage: 'https://github.com/mattpat/node-schedule#readme' } ]
+263 info install nan@1.7.0 into C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap
+264 info install async@1.4.2 into C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap
+265 info install node-schedule@0.1.13 into C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap
+266 info installOne nan@1.7.0
+267 verbose installOne of nan to C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap not in flight; installing
+268 verbose correctMkdir C:\Users\Feaco\AppData\Roaming\npm-cache\_locks correctMkdir not in flight; initializing
+269 info installOne async@1.4.2
+270 verbose installOne of async to C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap not in flight; installing
+271 verbose correctMkdir C:\Users\Feaco\AppData\Roaming\npm-cache\_locks correctMkdir not in flight; initializing
+272 info installOne node-schedule@0.1.13
+273 verbose installOne of node-schedule to C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap not in flight; installing
+274 verbose correctMkdir C:\Users\Feaco\AppData\Roaming\npm-cache\_locks correctMkdir not in flight; initializing
+275 verbose lock using C:\Users\Feaco\AppData\Roaming\npm-cache\_locks\nan-400791783d85e749.lock for C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap\node_modules\nan
+276 verbose lock using C:\Users\Feaco\AppData\Roaming\npm-cache\_locks\async-fbd69d6ded3f419d.lock for C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap\node_modules\async
+277 verbose lock using C:\Users\Feaco\AppData\Roaming\npm-cache\_locks\node-schedule-fbcc9576e93d660d.lock for C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap\node_modules\node-schedule
+278 silly install write writing nan 1.7.0 to C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap\node_modules\nan
+279 silly install write writing async 1.4.2 to C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap\node_modules\async
+280 silly install write writing node-schedule 0.1.13 to C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap\node_modules\node-schedule
+281 verbose unbuild node_modules\ccap\node_modules\nan
+282 verbose unbuild node_modules\ccap\node_modules\async
+283 verbose unbuild node_modules\ccap\node_modules\node-schedule
+284 silly gentlyRm C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap\node_modules\nan is being purged from base C:\Users\Feaco\Desktop\m.cqssc
+285 verbose gentlyRm don't care about contents; nuking C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap\node_modules\nan
+286 silly gentlyRm C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap\node_modules\async is being purged from base C:\Users\Feaco\Desktop\m.cqssc
+287 verbose gentlyRm don't care about contents; nuking C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap\node_modules\async
+288 verbose tar unpack C:\Users\Feaco\AppData\Roaming\npm-cache\nan\1.7.0\package.tgz
+289 verbose tar unpacking to C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap\node_modules\nan
+290 silly gentlyRm C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap\node_modules\nan is being purged
+291 verbose gentlyRm don't care about contents; nuking C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap\node_modules\nan
+292 verbose tar unpack C:\Users\Feaco\AppData\Roaming\npm-cache\async\1.4.2\package.tgz
+293 verbose tar unpacking to C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap\node_modules\async
+294 silly gentlyRm C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap\node_modules\async is being purged
+295 verbose gentlyRm don't care about contents; nuking C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap\node_modules\async
+296 silly gentlyRm C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap\node_modules\node-schedule is being purged from base C:\Users\Feaco\Desktop\m.cqssc
+297 verbose gentlyRm don't care about contents; nuking C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap\node_modules\node-schedule
+298 silly gunzTarPerm modes [ '777', '666' ]
+299 silly gunzTarPerm modes [ '777', '666' ]
+300 verbose tar unpack C:\Users\Feaco\AppData\Roaming\npm-cache\node-schedule\0.1.13\package.tgz
+301 verbose tar unpacking to C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap\node_modules\node-schedule
+302 silly gentlyRm C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap\node_modules\node-schedule is being purged
+303 verbose gentlyRm don't care about contents; nuking C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap\node_modules\node-schedule
+304 silly gunzTarPerm modes [ '777', '666' ]
+305 silly gunzTarPerm extractEntry package.json
+306 silly gunzTarPerm modified mode [ 'package.json', 436, 438 ]
+307 silly gunzTarPerm extractEntry package.json
+308 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+309 silly gunzTarPerm extractEntry package.json
+310 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+311 silly gunzTarPerm extractEntry include_dirs.js
+312 silly gunzTarPerm modified mode [ 'include_dirs.js', 436, 438 ]
+313 silly gunzTarPerm extractEntry LICENSE.md
+314 silly gunzTarPerm modified mode [ 'LICENSE.md', 436, 438 ]
+315 silly gunzTarPerm extractEntry LICENSE
+316 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
+317 silly gunzTarPerm extractEntry CHANGELOG.md
+318 silly gunzTarPerm modified mode [ 'CHANGELOG.md', 420, 438 ]
+319 silly gunzTarPerm extractEntry .npmignore
+320 silly gunzTarPerm modified mode [ '.npmignore', 420, 438 ]
+321 silly gunzTarPerm extractEntry README.md
+322 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+323 silly gunzTarPerm extractEntry .dntrc
+324 silly gunzTarPerm modified mode [ '.dntrc', 436, 438 ]
+325 silly gunzTarPerm extractEntry appveyor.yml
+326 silly gunzTarPerm modified mode [ 'appveyor.yml', 436, 438 ]
+327 silly gunzTarPerm extractEntry lib/async.js
+328 silly gunzTarPerm modified mode [ 'lib/async.js', 420, 438 ]
+329 silly gunzTarPerm extractEntry lib/increment.js
+330 silly gunzTarPerm modified mode [ 'lib/increment.js', 420, 438 ]
+331 silly gunzTarPerm extractEntry lib/schedule.js
+332 silly gunzTarPerm modified mode [ 'lib/schedule.js', 420, 438 ]
+333 silly gunzTarPerm extractEntry nan.h
+334 silly gunzTarPerm modified mode [ 'nan.h', 436, 438 ]
+335 silly gunzTarPerm extractEntry nan_implementation_12_inl.h
+336 silly gunzTarPerm modified mode [ 'nan_implementation_12_inl.h', 436, 438 ]
+337 silly gunzTarPerm extractEntry nan_implementation_pre_12_inl.h
+338 silly gunzTarPerm modified mode [ 'nan_implementation_pre_12_inl.h', 436, 438 ]
+339 silly gunzTarPerm extractEntry nan_new.h
+340 silly gunzTarPerm modified mode [ 'nan_new.h', 436, 438 ]
+341 silly gunzTarPerm extractEntry nan_string_bytes.h
+342 silly gunzTarPerm modified mode [ 'nan_string_bytes.h', 436, 438 ]
+343 silly gunzTarPerm extractEntry CHANGELOG.md
+344 silly gunzTarPerm modified mode [ 'CHANGELOG.md', 436, 438 ]
+345 silly gunzTarPerm extractEntry test/convenience-method-test.js
+346 silly gunzTarPerm modified mode [ 'test/convenience-method-test.js', 420, 438 ]
+347 verbose write writing to C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap\node_modules\async\package.json
+348 info preinstall async@1.4.2
+349 verbose readDependencies loading dependencies from C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap\node_modules\async\package.json
+350 verbose readDependencies loading dependencies from C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap\node_modules\async\package.json
+351 silly install resolved []
+352 verbose about to build C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap\node_modules\async
+353 info build C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap\node_modules\async
+354 info linkStuff async@1.4.2
+355 silly linkStuff async@1.4.2 has C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap\node_modules as its parent node_modules
+356 verbose linkBins async@1.4.2
+357 verbose linkMans async@1.4.2
+358 verbose rebuildBundles async@1.4.2
+359 info install async@1.4.2
+360 silly gunzTarPerm extractEntry test/date-convenience-methods-test.js
+361 silly gunzTarPerm modified mode [ 'test/date-convenience-methods-test.js', 420, 438 ]
+362 silly gunzTarPerm extractEntry test/job-test.js
+363 silly gunzTarPerm modified mode [ 'test/job-test.js', 420, 438 ]
+364 info postinstall async@1.4.2
+365 verbose unlock done using C:\Users\Feaco\AppData\Roaming\npm-cache\_locks\async-fbd69d6ded3f419d.lock for C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap\node_modules\async
+366 silly gunzTarPerm extractEntry test/range-test.js
+367 silly gunzTarPerm modified mode [ 'test/range-test.js', 420, 438 ]
+368 silly gunzTarPerm extractEntry test/recurrence-rule-test.js
+369 silly gunzTarPerm modified mode [ 'test/recurrence-rule-test.js', 420, 438 ]
+370 verbose write writing to C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap\node_modules\node-schedule\package.json
+371 verbose write writing to C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap\node_modules\nan\package.json
+372 info preinstall node-schedule@0.1.13
+373 verbose readDependencies loading dependencies from C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap\node_modules\node-schedule\package.json
+374 info preinstall nan@1.7.0
+375 verbose readDependencies loading dependencies from C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap\node_modules\node-schedule\package.json
+376 verbose readDependencies loading dependencies from C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap\node_modules\nan\package.json
+377 silly install resolved []
+378 verbose about to build C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap\node_modules\node-schedule
+379 info build C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap\node_modules\node-schedule
+380 verbose readDependencies loading dependencies from C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap\node_modules\nan\package.json
+381 info linkStuff node-schedule@0.1.13
+382 silly linkStuff node-schedule@0.1.13 has C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap\node_modules as its parent node_modules
+383 silly install resolved []
+384 verbose about to build C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap\node_modules\nan
+385 info build C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap\node_modules\nan
+386 info linkStuff nan@1.7.0
+387 silly linkStuff nan@1.7.0 has C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap\node_modules as its parent node_modules
+388 verbose linkBins node-schedule@0.1.13
+389 verbose linkMans node-schedule@0.1.13
+390 verbose rebuildBundles node-schedule@0.1.13
+391 info install node-schedule@0.1.13
+392 info postinstall node-schedule@0.1.13
+393 verbose linkBins nan@1.7.0
+394 verbose linkMans nan@1.7.0
+395 verbose rebuildBundles nan@1.7.0
+396 verbose unlock done using C:\Users\Feaco\AppData\Roaming\npm-cache\_locks\node-schedule-fbcc9576e93d660d.lock for C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap\node_modules\node-schedule
+397 info install nan@1.7.0
+398 info postinstall nan@1.7.0
+399 verbose unlock done using C:\Users\Feaco\AppData\Roaming\npm-cache\_locks\nan-400791783d85e749.lock for C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap\node_modules\nan
+400 verbose about to build C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap
+401 info build C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap
+402 info linkStuff ccap@0.6.10
+403 silly linkStuff ccap@0.6.10 has C:\Users\Feaco\Desktop\m.cqssc\node_modules as its parent node_modules
+404 verbose linkBins ccap@0.6.10
+405 verbose linkMans ccap@0.6.10
+406 verbose rebuildBundles ccap@0.6.10
+407 verbose rebuildBundles [ 'async', 'nan', 'node-schedule' ]
+408 info install ccap@0.6.10
+409 verbose unsafe-perm in lifecycle true
+410 info ccap@0.6.10 Failed to exec install script
+411 verbose unlock done using C:\Users\Feaco\AppData\Roaming\npm-cache\_locks\ccap-d4b191b492155bb2.lock for C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap
+412 verbose stack Error: ccap@0.6.10 install: `node-gyp rebuild`
+412 verbose stack Exit status 1
+412 verbose stack     at EventEmitter.<anonymous> (c:\Program Files\nodejs\node_modules\npm\lib\utils\lifecycle.js:217:16)
+412 verbose stack     at emitTwo (events.js:87:13)
+412 verbose stack     at EventEmitter.emit (events.js:172:7)
+412 verbose stack     at ChildProcess.<anonymous> (c:\Program Files\nodejs\node_modules\npm\lib\utils\spawn.js:24:14)
+412 verbose stack     at emitTwo (events.js:87:13)
+412 verbose stack     at ChildProcess.emit (events.js:172:7)
+412 verbose stack     at maybeClose (internal/child_process.js:827:16)
+412 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+413 verbose pkgid ccap@0.6.10
+414 verbose cwd C:\Users\Feaco\Desktop\m.cqssc
+415 error Windows_NT 6.1.7601
+416 error argv "c:\\Program Files\\nodejs\\node.exe" "c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "ccap"
+417 error node v4.4.7
+418 error npm  v2.15.8
+419 error code ELIFECYCLE
+420 error ccap@0.6.10 install: `node-gyp rebuild`
+420 error Exit status 1
+421 error Failed at the ccap@0.6.10 install script 'node-gyp rebuild'.
+421 error This is most likely a problem with the ccap package,
+421 error not with npm itself.
+421 error Tell the author that this fails on your system:
+421 error     node-gyp rebuild
+421 error You can get information on how to open an issue for this project with:
+421 error     npm bugs ccap
+421 error Or if that isn't available, you can get their info via:
+421 error
+421 error     npm owner ls ccap
+421 error There is likely additional logging output above.
+422 verbose exit [ 1, true ]
+423 verbose unbuild node_modules\ccap
+424 info preuninstall ccap@0.6.10
+425 info uninstall ccap@0.6.10
+426 verbose unbuild rmStuff ccap@0.6.10 from C:\Users\Feaco\Desktop\m.cqssc\node_modules
+427 info postuninstall ccap@0.6.10
+428 silly gentlyRm C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap is being purged from base C:\Users\Feaco\Desktop\m.cqssc
+429 verbose gentlyRm don't care about contents; nuking C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap
+430 silly vacuum-fs purging C:\Users\Feaco\Desktop\m.cqssc\node_modules\ccap
+431 silly vacuum-fs quitting because other entries in C:\Users\Feaco\Desktop\m.cqssc\node_modules

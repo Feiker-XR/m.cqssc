@@ -55,7 +55,9 @@
         └── readme.md
 
 
-
+#热部署
+    npm install node-dev --save-dev
+    package.json  "start": "node-dev ./bin/www"
 
 
 #相关规范

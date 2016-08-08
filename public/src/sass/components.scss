@@ -44,11 +44,13 @@
 		background : url(../imgs/icons/icon-v1.png) no-repeat center center;
 		left       : 315px;
 		top        : 100px;
+		visibility : hidden;
 	}
 	&.icon-exist{
 		background : url(../imgs/icons/icon-exist.png) no-repeat center center;
-		top:0;
-		right:10px;
+		top        : 0;
+		right      : 10px;
+		visibility : hidden;
 	}
 	&.icon-new{
 		background : url(../imgs/icons/icon-new.png) no-repeat center center ;
@@ -68,7 +70,7 @@
 	height         :  $barHeight - 8 +px;
 	margin-left    :  20px;
 	margin-top     :  $barHeight+px;
-	background     :  url(../imgs/icons/bg-btn.jpg) repeat-x;
+	background     :  url(../imgs/icons/bg-btn.jpg) repeat-x center bottom;
 	font-size      :  $barFontsize+px;
 	line-height    :  $barHeight - 8+px;
 	color          :  $colorBtnBlue;
@@ -140,6 +142,7 @@
 }
 .tip-box{
 	@extend .content;
+	height : $barHeight/4*3+px;
 	.tip{
 		display      : block;
 		width        : $designWidth*0.6+px;
@@ -150,6 +153,7 @@
 		margin-left  : 20px;
 		background   : url(../imgs/icons/icon-err.png) no-repeat center left;
 		text-indent  : $barHeight/2+px;
+		display      : none; 
 	}
 }
 .footer{

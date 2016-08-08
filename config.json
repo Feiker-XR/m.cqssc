@@ -14,9 +14,17 @@
 		
 		},
 		"scripts":{
-			"from":"public/src/scripts/common/*.js",
-			"mid":"public/mid/scripts",
-			"to":"public/dist/scripts"
+			"common":{
+				"from":"public/src/scripts/common/*.js",
+				"mid":"public/mid/scripts",
+				"to":"public/dist/scripts"
+			},
+			"login":{
+				"from":"public/src/scripts/login/*.js",
+				"mid":"public/mid/scripts",
+				"to":"public/dist/scripts"
+			}
+			
 		},
 		"images":{
 			"from":"public/src/imgs/**/*.{jpeg,jpg,png,gif}",
