@@ -66,14 +66,30 @@ var con = angular.module('starter.controllers', ['ionic'])
             $event.stopPropagation();
         };
 
+//点击页面任何部分触发的事件
         $scope.allClick = function () {
+            $('#methodBox').css('height','0px');
             $('.ar-popmenu').addClass('menuShow');
         };
-
-        $rootScope.showRecord10 = function () {
-            $rootScope.historyShow = !$rootScope.historyShow;
-            $rootScope.historyRecord = $rootScope.serverGameConfig.records.slice(0, 10);
+//显示最近10条开奖记录
+        $rootScope.showRecord10 = function (flag) {
+            if(!flag){
+                $rootScope.historyShow = !$rootScope.historyShow;
+                $rootScope.historyRecord = $rootScope.serverGameConfig.records.slice(0, 10);
+                $rootScope.showGameBox();
+            }else{
+                $rootScope.historyShow = false;
+            }
         };
+//title下拉后显示遮罩层
+        $rootScope.showGameBox = function(){
+            if($rootScope.historyShow){
+                $('#historyBox').css('height','1200px');
+            }else{
+                $('#historyBox').css('height','0px');
+            }
+        }
+
         $rootScope.showRecord = function () {
             location.href = '/showrecord/detail'
         };

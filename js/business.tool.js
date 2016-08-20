@@ -37,19 +37,20 @@ var businesstool = new Class({
         var self = this;
         var obj = {
             // "CGISESSID": this.CGISESSID,
-            "gameType": '', // 彩種
+            "gameType": 'cqssc', // 彩種
             "isTrace": 0, // 是否追號"0 未追號 1 追號"
             "traceWinStop": 1, //追中即停"0 false 1 ture"
             "traceStopValue": -1, // 盈利停止 -1 未追號 1 false 2 ture
             "balls": [], // 玩法
             "orders": [], // 訂單期號
-            "amount": 0 // 總金額
+            "amount": 0, // 總金額
+            "isWap": 1    //时候是wap投注
         };
         var arr = this.ballBucket;
         var acount = 0;
         var continuesBet = self.globelMultipleData.continuesBet;
 
-        if (continuesBet > 1) {
+        if (continuesBet > 1) {         //追期
             // 如果连开大于1,则需要设置连开
             obj.isTrace = 1; // 修改追号状态
             if (self.globelMultipleData.traceWinStop != true) {
@@ -275,7 +276,6 @@ var businesstool = new Class({
                 hasChoose: this.$rootScope.hasChoose,
                 textaraData: this.$rootScope.textaraData
             }
-
         } else {
             var resultData = this.game[key].prototype.getData();
             var count = data.count = resultData.count;

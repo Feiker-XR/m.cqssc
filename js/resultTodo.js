@@ -23,16 +23,14 @@ var resultTodo = new Class({
                     var v = $(this).val();
                     if (v > 50) {
                         v = 50;
-                        $(this).val(v)
+                        $(this).val(v);
+                        new self.Tip('期数超限').start();   //add by feiker 2016-8-18 18:48:33
                     }
-
                     if (v == 0) {
                         v = 1;
                     }
-
                     self.$scope.$apply(function () {
                         self.globelMultipleData.continuesBet = v;
-                        self.$scope.changeContinuesBet();
                     });
                 }, 'blur': function () {
                     self.$scope.$apply(function () {
@@ -143,7 +141,9 @@ var resultTodo = new Class({
                     self.globelMultipleData.continuesBet = 1;
                 }
                 if (self.globelMultipleData.continuesBet > 50) {
+                    new self.Tip('期数超限').start();   //add by feiker 2016-8-18 18:14:22
                     self.globelMultipleData.continuesBet = 50;
+
                 }
             };
             self.$scope.plusContinuesBet = function() {
@@ -180,23 +180,42 @@ var resultTodo = new Class({
             self.$scope.globleMultipleChange();
 
             self.$scope.gosubmit = function () {
-                self.totalMoney = self.$scope.totalMoney;
-                var parameter = self.getSubmitData();
-                if (parameter.amount > self.serverGameConfig.balance && !window.debug) {
-                    var tips = new self.Tip("您的余额不足");
-                    tips.start();
-                    return;
-                }
-                if (self.isEmptyballBucket()) {
-                    new self.Tip('请先添加注单').start();
-                } else {
-                    self.$state.go('submit', {totalMoney: self.$scope.totalMoney}, {
-                        location: true,
-                        reload: true,
-                        inherit: true,
-                        notify: true
-                    });
-                }
+                self.$ionicPopup.confirm({
+                    title: '确认投注',
+                    template: '<p class="popup-param">确定投注吗</p>',
+                    buttons: [
+                        {text: '取消'},
+                        {
+                            text: '确定',
+                            type: 'button-positive',
+                            onTap: function (e) {
+                                self.totalMoney = self.$scope.totalMoney;
+                                var parameter = self.getSubmitData();
+                                if (parameter.amount > self.serverGameConfig.balance && !window.debug) {
+                                    var tips = new self.Tip("您的余额不足");
+                                    tips.start();
+                                    return;
+                                }
+                                if (self.isEmptyballBucket()) {
+                                    new self.Tip('请先添加注单').start();
+                                } else {
+                                    self.$state.go('submit', {totalMoney: self.$scope.totalMoney}, {
+                                        location: true,
+                                        reload: true,
+                                        inherit: true,
+                                        notify: true
+                                    });
+                                }
+
+                                // self.$rootScope.totalObject.totalM = 0;
+                                // self.$rootScope.totalObject.totalCount = 0;
+                                // self.cleanupballBucket();
+                                // var type = self.$rootScope.currentMethodName;
+                                // self.getResult(1, type);
+                            }
+                        }
+                    ]
+                });
             };
 
             self.$scope.editLottory = function (item) {

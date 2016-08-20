@@ -60442,19 +60442,20 @@ var businesstool = new Class({
         var self = this;
         var obj = {
             // "CGISESSID": this.CGISESSID,
-            "gameType": '', // 彩種
+            "gameType": 'cqssc', // 彩種
             "isTrace": 0, // 是否追號"0 未追號 1 追號"
             "traceWinStop": 1, //追中即停"0 false 1 ture"
             "traceStopValue": -1, // 盈利停止 -1 未追號 1 false 2 ture
             "balls": [], // 玩法
             "orders": [], // 訂單期號
-            "amount": 0 // 總金額
+            "amount": 0, // 總金額
+            "isWap": 1    //时候是wap投注
         };
         var arr = this.ballBucket;
         var acount = 0;
         var continuesBet = self.globelMultipleData.continuesBet;
 
-        if (continuesBet > 1) {
+        if (continuesBet > 1) {         //追期
             // 如果连开大于1,则需要设置连开
             obj.isTrace = 1; // 修改追号状态
             if (self.globelMultipleData.traceWinStop != true) {
@@ -60680,7 +60681,6 @@ var businesstool = new Class({
                 hasChoose: this.$rootScope.hasChoose,
                 textaraData: this.$rootScope.textaraData
             }
-
         } else {
             var resultData = this.game[key].prototype.getData();
             var count = data.count = resultData.count;
@@ -60742,7 +60742,26 @@ var initPick = new Class({
             defConfig: defConfig
         }
         this.$scope.goBack = function () {
-            window.location.href = returnUrl;
+            //add by feiker 2016-8-18 19:17:34
+            console.log(
+           if(this.ballBucket.length>0) {      
+               $ionicPopup.confirm({
+                   title: '确认返回',
+                   template: '<p style="color:gray;"> 返回上层将清空已选号码，您确定返回吗</p>',
+                   buttons: [
+                       {text: '取消'},
+                       {
+                           text: '确定',
+                           type: 'button-positive',
+                           onTap: function (e) {
+                               window.location.href = returnUrl;
+                           }
+                       }
+                   ]
+               });
+           }else{
+               window.location.href = returnUrl;
+           }
         };
     },
     getShareOptions: function () {
@@ -60755,23 +60774,25 @@ var initPick = new Class({
         self.initData();
         self.initEvent();
         self.setAward();
+
     },
     hasError: function () {
         var self = this;
         try {
             if (!self.isDanshi(self.serverGameConfig.defaultMethod)) {
-                self.$rootScope.ballsTree = self.game[self.serverGameConfig.defaultMethod.replace(/\./g, '')].prototype.checkBallArray;
+                self.$rootScope.ballsTree =  self.game[self.serverGameConfig.defaultMethod.replace(/\./g, '')].prototype.checkBallArray;
             }
         } catch (e) {
-            self.$ionicPopup.alert({
-                title: '温馨提示',
-                template: '网络异常,系统加载失败,请稍后重试'
-            }).then(function (res) {
-                self.$scope.goBack();
-            });
-            return true;
+            // self.$ionicPopup.alert({
+            //     title: '温馨提示',
+            //     template: '网络异常,系统加载失败,请稍后重试'
+            // }).then(function (res) {
+            //     self.$scope.goBack();
+            // });
+            //return true;
+            //self.$rootScope.ballsTree =  self.game['housanzhixuanfushi'].prototype.checkBallArray;  //默认的是后三复式
         }
-        return false;
+        //return false;
     },
     setawardGroups: function (bonus) {
         var self = this;
@@ -60779,8 +60800,8 @@ var initPick = new Class({
             // "CGISESSID": self.CGISESSID,
             "awardGroupId": bonus || self.$scope.bonus.choice
         }, function (obj) {
-            if (obj.isSuccess != 1) {
-                !window.debug && self.$scope.goBack();
+            if (obj.status != 1) {
+                !window.debug && self.$scope.goBack();;
                 return false;
             }
             (new self.Tip('奖金组设置成功')).start();
@@ -60808,11 +60829,11 @@ var initPick = new Class({
                             text: '<b>确定</b>',
                             type: 'button-positive',
                             onTap: function (e) {
-                                console.log(self.$scope.bonus);
                                 if (!self.$scope.bonus.choice) {
                                     e.preventDefault();
                                 } else {
                                     self.setawardGroups();
+                                    //new self.Tip('奖金组设置成功').start();   //add by feiker 2016-8-18 19:24:31
                                     return self.$scope.bonus;
                                 }
                             }
@@ -60987,6 +61008,7 @@ var initPick = new Class({
                     }
                 }
             }
+            //console.log(this.ballBucket);
         };
 
         self.$rootScope.setBukets = function (iseditor, fromGoBucket) {
@@ -61030,7 +61052,7 @@ var initPick = new Class({
                 cssClass: 'showPlayInfo',
                 template: self.game[self.getNormalMethodName(self.$rootScope.currentMethodName)].prototype.tip + '<br />基础奖金' + '1800元',
                 cancelText: '查看玩法说明',
-                okText: '确定'
+                okText: '关闭'
             });
 
             confirmPopup.then(function(res) {
@@ -61055,7 +61077,7 @@ var initPick = new Class({
                 $event && $event.stopPropagation();
             }
         };
-
+//超级2000和普通玩法导航切换
         self.$scope.mainSlideChange = function (i, $event) {
             if (i != undefined) {
                 if (i == 0) {
@@ -61065,6 +61087,7 @@ var initPick = new Class({
                 if (i == 1) {
                     $("#play_type_box").animate({'margin-left': '-100%'});
                     $(".ar-poptype .strategy-select").addClass('super-2000');
+                    //self.$scope.slideChange(8,$event);
                 }
                 $event && $event.stopPropagation();
             }
@@ -61089,6 +61112,7 @@ var initPick = new Class({
             if (/^.+?baodan$/.test(type)) self.game._.daxiaodanshuangqing(bin, 'qing');
             bin[index] = !bin[index];
             self.getResult(index, type);
+            self.$rootScope.showRecord10(true);
         };
 
         self.$rootScope.getRandom = function () {
@@ -61127,7 +61151,7 @@ var initPick = new Class({
         self.$scope.helprule = function () {
             self.$ionicPopup.alert({
                 title: '温馨提示',
-                template: '<p   style="color:#888;font-size:12px;line-height:170%;">说明：<br>1、请参照"标准格式样本"格式录入或上传方案。<br>2、每一注号码之间的间隔符支持回车 空格[ ] 逗号[,] 分号[;] 冒号[:] 竖线 [|]<br>3、文件格式必须是.txt格式。<br>4、文件较大时会导致上传时间较长，请耐心等待！<br>5、将文件拖入文本框即可快速实现文件上传功能。<br>6、导入文本内容后将覆盖文本框中现有的内容。</p>',
+                template: '<p   style="color:#888;font-size:12px;line-height:170%; text-align: left;">1.输入的注单请参照如下规则：单注内各号码保持相连，不同注号码间用分隔符隔开;<br>2.分隔符支持：回车[ ]空格[ ]逗号[,]分号[;]冒号[:]竖线[|];<br>3.文件较大时，提交注单可能需要一定时间，请耐心等待;</p>',
                 buttons: [
                     {text: '确定', type: 'button-positive'}
                 ]
@@ -61175,14 +61199,14 @@ var initPick = new Class({
             self.t.val().trim() && self.$ionicPopup.alert({
                 title: '是否清空所有注单',
                 template: '<p class="popup-param">清空注单:{{valsss}}</p>',
-                scope: $scope,
+                scope: self.$scope,
                 buttons: [
                     {text: '取消'},
                     {
                         text: '确定',
                         type: 'button-positive',
                         onTap: function (e) {
-                            t.val('');
+                            self.t.val('');
                         }
                     }
                 ]
@@ -61334,16 +61358,14 @@ var resultTodo = new Class({
                     var v = $(this).val();
                     if (v > 50) {
                         v = 50;
-                        $(this).val(v)
+                        $(this).val(v);
+                        new self.Tip('期数超限').start();   //add by feiker 2016-8-18 18:48:33
                     }
-
                     if (v == 0) {
                         v = 1;
                     }
-
                     self.$scope.$apply(function () {
                         self.globelMultipleData.continuesBet = v;
-                        self.$scope.changeContinuesBet();
                     });
                 }, 'blur': function () {
                     self.$scope.$apply(function () {
@@ -61454,7 +61476,9 @@ var resultTodo = new Class({
                     self.globelMultipleData.continuesBet = 1;
                 }
                 if (self.globelMultipleData.continuesBet > 50) {
+                    new self.Tip('期数超限').start();   //add by feiker 2016-8-18 18:14:22
                     self.globelMultipleData.continuesBet = 50;
+
                 }
             };
             self.$scope.plusContinuesBet = function() {
@@ -61491,23 +61515,42 @@ var resultTodo = new Class({
             self.$scope.globleMultipleChange();
 
             self.$scope.gosubmit = function () {
-                self.totalMoney = self.$scope.totalMoney;
-                var parameter = self.getSubmitData();
-                if (parameter.amount > self.serverGameConfig.balance && !window.debug) {
-                    var tips = new self.Tip("您的余额不足");
-                    tips.start();
-                    return;
-                }
-                if (self.isEmptyballBucket()) {
-                    new self.Tip('请先添加注单').start();
-                } else {
-                    self.$state.go('submit', {totalMoney: self.$scope.totalMoney}, {
-                        location: true,
-                        reload: true,
-                        inherit: true,
-                        notify: true
-                    });
-                }
+                self.$ionicPopup.confirm({
+                    title: '确认投注',
+                    template: '<p class="popup-param">确定投注吗</p>',
+                    buttons: [
+                        {text: '取消'},
+                        {
+                            text: '确定',
+                            type: 'button-positive',
+                            onTap: function (e) {
+                                self.totalMoney = self.$scope.totalMoney;
+                                var parameter = self.getSubmitData();
+                                if (parameter.amount > self.serverGameConfig.balance && !window.debug) {
+                                    var tips = new self.Tip("您的余额不足");
+                                    tips.start();
+                                    return;
+                                }
+                                if (self.isEmptyballBucket()) {
+                                    new self.Tip('请先添加注单').start();
+                                } else {
+                                    self.$state.go('submit', {totalMoney: self.$scope.totalMoney}, {
+                                        location: true,
+                                        reload: true,
+                                        inherit: true,
+                                        notify: true
+                                    });
+                                }
+
+                                // self.$rootScope.totalObject.totalM = 0;
+                                // self.$rootScope.totalObject.totalCount = 0;
+                                // self.cleanupballBucket();
+                                // var type = self.$rootScope.currentMethodName;
+                                // self.getResult(1, type);
+                            }
+                        }
+                    ]
+                });
             };
 
             self.$scope.editLottory = function (item) {
@@ -61692,8 +61735,14 @@ var submitTodo = new Class({
             });
 
         };
-        self.$scope.goPick = function () {
-            self.$window.location.reload();
+        self.$scope.goPick = function (isSuccess) {     //modify by feiker 2016-8-19 10:12:32
+            if(!isSuccess){
+                self.$window.location.reload();
+            }else{
+                console.log('drawing');
+                self.$state.go('drawing');
+            }
+
         };
         self.$scope.volumeControll = function () {
             if (!self.$rootScope.volume) {
@@ -61854,9 +61903,13 @@ var con = angular.module('starter.controllers', ['ionic'])
             $('.ar-popmenu').addClass('menuShow');
         };
 
-        $rootScope.showRecord10 = function () {
-            $rootScope.historyShow = !$rootScope.historyShow;
-            $rootScope.historyRecord = $rootScope.serverGameConfig.records.slice(0, 10);
+        $rootScope.showRecord10 = function (flag) {
+            if(!flag){
+                $rootScope.historyShow = !$rootScope.historyShow;
+                $rootScope.historyRecord = $rootScope.serverGameConfig.records.slice(0, 10);
+            }else{
+                $rootScope.historyShow = false;
+            }
         };
         $rootScope.showRecord = function () {
             location.href = '/showrecord/detail'

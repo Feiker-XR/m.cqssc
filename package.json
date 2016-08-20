@@ -5,7 +5,7 @@
   "main": "data.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./bin/www"
+    "start":"node ./bin/www"
   },
   "repository": {
     "type": "git",
@@ -16,19 +16,11 @@
   "homepage": "https://bitbucket.org/richardgong1987/mmc#readme",
   "devDependencies": {
     "del": "^2.2.1",
-    "express": "^4.14.0",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
     "gulp-minify-css": "^1.2.4",
     "gulp-minify-html": "^1.0.6",
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^1.5.4"
-  },
-  "dependencies": {
-    "body-parser": "^1.15.2",
-    "cookie-parser": "^1.4.3",
-    "debug": "^2.2.0",
-    "ejs": "^2.5.1",
-    "express": "^4.14.0"
   }
 }

@@ -3,9 +3,11 @@
         <!--弹出选择菜单-->
         <div class="ar-popmenu {{menuShow? '':'menuShow'}}">
             <ul>
+                <li><a href="#" style="color:black;text-decoration: none;"> 走势图</a></li>
                 <li ng-click="yuanjiao()">模式 {{ moneyUnit==1?"元":"角" }}</li>
-                <li ng-click="fandian()" style="display: {{serverGameConfig.awardGroupRetStatus==1?'':'none'}}">奖金返点</li>
+                <li ng-click="fandian()" style="display: {{serverGameConfig.awardGroupRetStatus==1 ? '':'none'}}">奖金返点</li>
                 <li ng-click="showPlayInfo()">玩法说明</li>
+                <li><a href="#" style="color:black;text-decoration: none;">电脑版</a></li>
             </ul>
         </div>
 
@@ -21,55 +23,61 @@
     </div>
     <!--游戏类型-->
 
-    <div class="ar-poptype" onscroll="true" ng-class="{active: poptypeshow}">
+
+
+    <div class="ar-poptype" onscroll="true" ng-class="{active: poptypeshow}" style="overflow: visible; position: absolute; z-index: 3;">
         <!--业务模板数据-->
-        <div class="strategy-select">
-            <div class="ssc-menu-nav1">
-                <a class="putong" ng-click="mainSlideChange(0,$event)">普通玩法</a>
-                <a class="chaoji2000" ng-click="mainSlideChange(1,$event)" style="display: {{serverGameConfig.isSupport2000?'':'none'}};">超级2000</a>
-            </div>
-            <div style="width:100%; overflow: hidden;border-bottom: 1px solid #e6e6e6;">
-                <div class="row" id="play_type_box">
-                    <div class="col mytitle {{initilesData[i].active ? 'active':''}}"
-                         ng-repeat="(i,gameClass) in serverGameConfig.gameMethods track by initiles($index,gameClass)"
-                         ng-click="slideChange(i,$event)">
-                        <span>{{gameClass.title | split:'_':'latest'}}</span>
+        <div style="width:100%;height: 0px; background:rgba(0,0,0,0.6); position: absolute; top:315px;" id="methodBox"></div>
+            <div class="strategy-select">
+                <div class="ssc-menu-nav1" style="position: relative;">
+                    <a class="putong" ng-click="mainSlideChange(0,$event)">普通玩法</a>
+                    <a class="chaoji2000" ng-click="mainSlideChange(1,$event)" style="display: {{serverGameConfig.isSupport2000?'':'none'}};">超级2000</a>
+                </div>
+                <div style="width:100%; overflow: hidden;border-bottom: 1px solid #e6e6e6; position: relative;">
+                    <div class="row" id="play_type_box">
+                        <div class="col mytitle {{initilesData[i].active ? 'active':''}}"
+                             ng-repeat="(i,gameClass) in serverGameConfig.gameMethods track by initiles($index,gameClass)"
+                             ng-click="slideChange(i,$event)">
+                            <span>{{gameClass.title | split:'_':'latest'}}</span>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <ion-slide-box class="noborder" on-slide-changed="slideHasChanged($index)" ng-click="slideChange()">
-                <ion-slide ng-repeat="(iii,gameClass) in serverGameConfig.gameMethods track by initMM($index)">
-                    <div class="strategy-list">
-                        <dl ng-repeat="gamelabel in gameClass.childs">
-                            <dt>{{gamelabel.title }}:</dt>
-                            <dd>
-                            <span class="{{ gameMethod.cur ? 'active':'' }}"
-                                  ng-click="chooseGame(gameMethod,iii)"
-                                  ng-repeat="gameMethod in gamelabel.childs track by initMethed($index,gameMethod,gameMethod.mode+'.'+gameMethod.parent+'.'+gameMethod.name,gameClass.title+gameMethod.title,iii)">
-                                {{gameMethod.title}}
-                            </span>
-                            </dd>
-                        </dl>
-                    </div>
-                </ion-slide>
-            </ion-slide-box>
+                <ion-slide-box class="noborder" on-slide-changed="slideHasChanged($index)" ng-click="slideChange()">
+                    <ion-slide ng-repeat="(iii,gameClass) in serverGameConfig.gameMethods track by initMM($index)">
+                        <div class="strategy-list">
+                            <dl ng-repeat="gamelabel in gameClass.childs">
+                                <dt>{{gamelabel.title }}:</dt>
+                                <dd>
+                                <span class="{{ gameMethod.cur ? 'active':'' }}"
+                                      ng-click="chooseGame(gameMethod,iii)"
+                                      ng-repeat="gameMethod in gamelabel.childs track by initMethed($index,gameMethod,gameMethod.mode+'.'+gameMethod.parent+'.'+gameMethod.name,gameClass.title+gameMethod.title,iii)">
+                                    {{gameMethod.title}}
+                                </span>
+                                </dd>
+                            </dl>
+                        </div>
+                    </ion-slide>
+                </ion-slide-box>
+
 
         </div>
         <!--业务模板数据-->
+
+
     </div>
-    <ion-content  class="has-footer has-header " delegate-handle="mainScroll">
 
 
-        <!--游戏记录-->
-        <div class="game-history {{isDanshi? 'isDanshi':'' }}">
+
+    <div class="game-history {{isDanshi? 'isDanshi':'' }}" style="top:45px;">
+        <div style="width:100%; position:relative;background: rgba(0,0,0,0.6);height: 0px;" id="historyBox">
             <div class="history-bar">
                 <div class="history-bar-title">
                     <span>距{{issueNumber}}期截止 <span class="timecount">{{issueMinitus}}分{{issueSeconed}}秒</span></span>
-                    <span
-                        class="ai-random"
-                        ng-click="getRandom()">机选
-                    </span>
+                        <span
+                                class="ai-random"
+                                ng-click="getRandom()">机选
+                        </span>
                 </div>
                 <!--<span class="history-down">∨</span>-->
                 <div class="history-box {{historyShow ? '': 'record-list'}}">
@@ -95,15 +103,21 @@
                     </table>
                     <div ng-click="showRecord10()" class="open-button">
                         <a href="#" class="viewmore">查看更多</a>
-                        <span class="open-button"><span class="button button-icon icon {{historyShow?'ion-ios-arrow-up' :'ion-ios-arrow-down'}}"></span></span>
+                        <span class="open-button"><span class="button button-icon icon {{historyShow?'ion-ios-arrow-up' :'ion-ios-arrow-down'}}" style="width:100%;min-height: 13px; line-height: 16px;"></span></span>
                     </div>
                 </div>
                 <div ng-click="showRecord10()" class="open-button">
                     <a href="#" class="viewmore">查看更多</a>
-                    <span class="open-button"><span class="button button-icon icon {{historyShow?'ion-ios-arrow-up' :'ion-ios-arrow-down'}}"></span></span>
+                    <span class="open-button"><span class="button button-icon icon {{historyShow?'ion-ios-arrow-up' :'ion-ios-arrow-down'}}" style="width:100%;min-height: 13px; line-height: 16px;"></span></span>
                 </div>
             </div>
         </div>
+    </div>
+    <ion-content  class="has-footer has-header " delegate-handle="mainScroll" style="top:77px;">
+
+
+        <!--游戏记录-->
+
         <!--选号容器-->
         <div class="number-select-content {{isDanshi? 'isDanshi':'' }}">
             <!--业务模板数据-->
@@ -116,7 +130,7 @@
                         </li>
                     </ol>
                 </div>
-                <ul class="ball-list">
+                <ul class="ball-list" style="clear:both;">
                     <li ng-repeat="(k,v) in range(this.startPosstion,balls.length+this.startPosstion)"
                         class="{{ balls[k] ? 'active':'' }}"  ng-click="result(balls,k,currentMethodName,v)">{{ v }}
                     </li>
@@ -139,8 +153,12 @@
             </div>
 
             <div class="number-select-content-danshi">
-                <p id="tips-danshi" class="tips-danshi" style="color:#888;font-size:12px;line-height:170%;">说明：<br>1、请参照"标准格式样本"格式录入或上传方案。<br>2、每一注号码之间的间隔符支持
-                    回车 空格[ ] 逗号[,] 分号[;] 冒号[:] 竖线 [|]<br>3、文件格式必须是.txt格式。<br>4、文件较大时会导致上传时间较长，请耐心等待！<br>5、将文件拖入文本框即可快速实现文件上传功能。<br>6、导入文本内容后将覆盖文本框中现有的内容。
+                <!--说明：<br>1、请参照"标准格式样本"格式录入或上传方案。<br>2、每一注号码之间的间隔符支持
+                    回车 空格[ ] 逗号[,] 分号[;] 冒号[:] 竖线 [|]<br>3、文件格式必须是.txt格式。<br>4、文件较大时会导致上传时间较长，请耐心等待！<br>5、将文件拖入文本框即可快速实现文件上传功能。<br>6、导入文本内容后将覆盖文本框中现有的内容。-->
+                <p id="tips-danshi" class="tips-danshi" style="color:#888;font-size:12px;line-height:170%;">
+                    1.输入的注单请参照如下规则：单注内各号码保持相连，不同注号码间用分隔符隔开;<br>
+                    2.分隔符支持：回车[ ]空格[ ]逗号[,]分号[;]冒号[:]竖线[|];<br>
+                    3.文件较大时，提交注单可能需要一定时间，请耐心等待;
                 </p>
 
                 <textarea class="text-areas" ng-focus="textareaFocus()" ng-blur="textareaBlur()" rows="20"></textarea>
@@ -177,7 +195,8 @@
                 <dl class="result-money" ng-click="setBukets(isDanshi ? 'imadanshi':undefined)">
                     <!--业务模板数据-->
                     <dt>已选{{ shopCar.count }}注x{{ shopCar.onePrice * shopCar.moneyUnit }}元</dt>
-                    <dd>{{ mintotal}}元</dd>
+                    <!--<dd>{{ mintotal}}元</dd>-->
+                    <dd>{{ shopCar.count * shopCar.onePrice * shopCar.moneyUnit}}元</dd>
                     <!--业务模板数据-->
                 </dl>
                 <span class="result-plus" ng-click="setBukets(isDanshi ? 'imadanshi':undefined)">{{isDanshi ? ' ':'+'}}</span>

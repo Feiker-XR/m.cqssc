@@ -98,5 +98,9 @@ gulp.task('mainHtml', function () {
 
 gulp.task('default', ['baseJs', 'appCss']);
 
+gulp.task('watch',function(){
+    gulp.watch(baseJsList,['baseJs']);
+})
+
 
 

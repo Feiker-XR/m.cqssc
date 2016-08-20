@@ -89,8 +89,14 @@ var submitTodo = new Class({
             });
 
         };
-        self.$scope.goPick = function () {
-            self.$window.location.reload();
+        self.$scope.goPick = function (isSuccess) {     //modify by feiker 2016-8-19 10:12:32
+            if(!isSuccess){
+                self.$window.location.reload();
+            }else{
+                console.log('drawing');
+                self.$state.go('drawing');
+            }
+
         };
         self.$scope.volumeControll = function () {
             if (!self.$rootScope.volume) {

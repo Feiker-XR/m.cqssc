@@ -1,6 +1,6 @@
 <ion-view view-title="投注成功">
     <div class="bar bar-header bar-stable">
-        <a class="button button-icon icon ion-chevron-left" ng-click="goPick()"></a>
+        <a class="button button-icon icon ion-chevron-left" ng-click="goPick(true)"></a>
         <h1 class="title">投注成功</h1>
     </div>
     <ion-content class="has-footer has-header bg-drawing" overflow-scroll="true">
@@ -14,7 +14,7 @@
                 <dd>第{{IssueInfo.number}}期[追{{globelMultipleData.continuesBet}}期]</dd>
 
                 <dt>投注金额</dt>
-                <dd>{{(totalMoney = totalObject.totalM * globelMultipleData.multiple| number:1)  }}元</dd>
+                <dd>{{(totalMoney = totalObject.totalM * globelMultipleData.multiple *globelMultipleData.continuesBet| number:1)  }}元</dd>
 
                 <dt>投注内容</dt>
                 <dd></dd>
