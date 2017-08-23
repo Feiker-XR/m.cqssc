@@ -1,4 +1,4 @@
-(function(host, name, Event, undefined){
+(function (host, name, Event, undefined) {
     var gameConfigData = {
         "gameType": "cqssc",
         "gameTypeCn": "重庆时时彩",
@@ -533,159 +533,158 @@
     };
 
 
-
     var defConfig = {
-        //当前彩种名称
-        gameType : gameConfigData['gameType'],
-        gameTypeCn : gameConfigData['gameTypeCn'],
-        lotteryId : gameConfigData['lotteryId'],
-        awardGroups: gameConfigData['awardGroups'],
-        userId: gameConfigData['userId'],
-        userName: gameConfigData['userName'],
-        userLvl: gameConfigData['userLvl'],
-        awardRetStatus: gameConfigData['awardRetStatus'],
-        awardGroupRetStatus: gameConfigData['awardGroupRetStatus'],
-        backOutStartFee: gameConfigData['backOutStartFee'],
-        backOutRadio: gameConfigData['backOutRadio'],
-        isLotteryStopSale: gameConfigData['isLotteryStopSale'],
-        isfirstimeuse2000: gameConfigData['isfirstimeuse2000'],
-        isfirstimeusediamond2000: gameConfigData['isfirstimeusediamond2000'],
-        helpLink: gameConfigData['helpLink'],
-        sourceList: gameConfigData['sourceList']
-    },
-    instance;
+            //当前彩种名称
+            gameType: gameConfigData['gameType'],
+            gameTypeCn: gameConfigData['gameTypeCn'],
+            lotteryId: gameConfigData['lotteryId'],
+            awardGroups: gameConfigData['awardGroups'],
+            userId: gameConfigData['userId'],
+            userName: gameConfigData['userName'],
+            userLvl: gameConfigData['userLvl'],
+            awardRetStatus: gameConfigData['awardRetStatus'],
+            awardGroupRetStatus: gameConfigData['awardGroupRetStatus'],
+            backOutStartFee: gameConfigData['backOutStartFee'],
+            backOutRadio: gameConfigData['backOutRadio'],
+            isLotteryStopSale: gameConfigData['isLotteryStopSale'],
+            isfirstimeuse2000: gameConfigData['isfirstimeuse2000'],
+            isfirstimeusediamond2000: gameConfigData['isfirstimeusediamond2000'],
+            helpLink: gameConfigData['helpLink'],
+            sourceList: gameConfigData['sourceList']
+        },
+        instance;
     var pros = {
-        init:function(){
+        init: function () {
             var me = this;
             me.types = gameConfigData['gameMethods'];
         },
         //获取玩法类型
-        getTypes:function(isFilterClose){
+        getTypes: function (isFilterClose) {
             return this.types;
         },
-        getGameTypeCn:function(){
+        getGameTypeCn: function () {
             return this.defConfig.gameTypeCn;
         },
-        getDefaultMethod:function(){
+        getDefaultMethod: function () {
             return gameConfigData['defaultMethod'];
         },
         //获取动态配置接口地址
-        getDynamicConfigUrl:function(){
+        getDynamicConfigUrl: function () {
             return gameConfigData['dynamicConfigUrl'];
         },
         //获取单式上传接口地址
-        getUploadPath:function(){
+        getUploadPath: function () {
             return gameConfigData['uploadPath'];
         },
         //获取用户余额
-        getUserBalUrl:function(){
+        getUserBalUrl: function () {
             return gameConfigData['queryUserBalUrl'];
         },
         //获取投注页面显示订单接口地址
-        getUserOrdersUrl:function(){
+        getUserOrdersUrl: function () {
             return gameConfigData['getUserOrdersUrl'];
         },
         //获取单式上传接口地址
-        getUserPlansUrl:function(){
+        getUserPlansUrl: function () {
             return gameConfigData['getUserPlansUrl'];
         },
         //获取撤销手续费接口地址
-        getHandingChargeUrl:function(){
+        getHandingChargeUrl: function () {
             return gameConfigData['getHandingChargeUrl'];
         },
         //获取彩种logo地址
-        getLotteryLogoPath:function(){
+        getLotteryLogoPath: function () {
             return gameConfigData['getLotteryLogoPath'];
         },
         //获取玩法走势图接口地址
-        trendChartUrl:function(){
+        trendChartUrl: function () {
             return gameConfigData['trendChartUrl'];
         },
         //查询玩法描述和默认冷热球及用户投注方式奖金接口地址
-        getBetAwardUrl:function(){
+        getBetAwardUrl: function () {
             return gameConfigData['getBetAwardUrl'];
         },
         //获取冷热遗漏接口地址
-        getHotColdUrl:function(){
+        getHotColdUrl: function () {
             return gameConfigData['getHotColdUrl'];
         },
         //查询奖金组
-        getQueryGameUserAwardGroupByLotteryIdUrl:function(){
+        getQueryGameUserAwardGroupByLotteryIdUrl: function () {
             return gameConfigData['queryGameUserAwardGroupByLotteryIdUrl'];
         },
         //保存代理投注奖金组
-        getSaveProxyBetGameAwardGroupUrl:function(){
+        getSaveProxyBetGameAwardGroupUrl: function () {
             return gameConfigData['saveProxyBetGameAwardGroupUrl'];
         },
         //获取投注提交接口地址
-        submitUrl:function(){
+        submitUrl: function () {
             return gameConfigData['sumbitUrl'];
         },
         //获取首页接口
-        indexInitUrl:function(){
+        indexInitUrl: function () {
             return gameConfigData['indexInit'];
         },
         //获取最新开奖号码
-        lastNumberUrl:function(){
+        lastNumberUrl: function () {
             return gameConfigData['lastNumberUrl'];
         },
-    //name  wuxing.zhixuan.fushi
-    getTitleByName:function(name){
-        var me = this,
-            nameArr = name.split('.'),
-            nameLen = nameArr.length,
-            types = me.types,
-            i = 0,
-            len = types.length,
-            i2,
-            len2,
-            i3,
-            len3,
-            tempArr = [],
-            result = [];
-        //循环一级
-        for (; i < len; i++) {
-            if (types[i]['name'] == nameArr[0]) {
-                if (gameConfigData['gameType'].indexOf('115') < 0) {
-                    result.push(types[i]['title'].replace(/&nbsp;/g, ''));
-                }
-                if (nameLen > 1 && types[i]['childs'].length > 0) {
-                    tempArr = types[i]['childs'];
-                    len2 = tempArr.length;
-                    //循环二级
-                    for (i2 = 0; i2 < len2; i2++) {
-                        //console.log(tempArr[i2]['name']);
-                        if (tempArr[i2]['name'] == nameArr[1]) {
-                            if (gameConfigData['gameType'].indexOf('115') > 0) {
-                                result.push(tempArr[i2]['title'].replace(/&nbsp;/g, ''));
-                            }
-                            if (nameLen > 2 && tempArr[i2]['childs'].length > 0) {
-                                tempArr = tempArr[i2]['childs'];
-                                len3 = tempArr.length;
-                                //循环三级
-                                for (i3 = 0; i3 < len3; i3++) {
-                                    if (tempArr[i3]['name'] == nameArr[2]) {
-                                        if (tempArr[i3]['headline']) {
-                                            return tempArr[i3]['headline'];
-                                        }
-                                        if ($.inArray(tempArr[i3]['title'].replace(/&nbsp;/g, ''), result) == -1) {
-                                            result.push(tempArr[i3]['title'].replace(/&nbsp;/g, ''));
-                                        }
-                                        return result;
-                                    }
+        //name  wuxing.zhixuan.fushi
+        getTitleByName: function (name) {
+            var me = this,
+                nameArr = name.split('.'),
+                nameLen = nameArr.length,
+                types = me.types,
+                i = 0,
+                len = types.length,
+                i2,
+                len2,
+                i3,
+                len3,
+                tempArr = [],
+                result = [];
+            //循环一级
+            for (; i < len; i++) {
+                if (types[i]['name'] == nameArr[0]) {
+                    if (gameConfigData['gameType'].indexOf('115') < 0) {
+                        result.push(types[i]['title'].replace(/&nbsp;/g, ''));
+                    }
+                    if (nameLen > 1 && types[i]['childs'].length > 0) {
+                        tempArr = types[i]['childs'];
+                        len2 = tempArr.length;
+                        //循环二级
+                        for (i2 = 0; i2 < len2; i2++) {
+                            //console.log(tempArr[i2]['name']);
+                            if (tempArr[i2]['name'] == nameArr[1]) {
+                                if (gameConfigData['gameType'].indexOf('115') > 0) {
+                                    result.push(tempArr[i2]['title'].replace(/&nbsp;/g, ''));
                                 }
-                            } else {
-                                return result;
+                                if (nameLen > 2 && tempArr[i2]['childs'].length > 0) {
+                                    tempArr = tempArr[i2]['childs'];
+                                    len3 = tempArr.length;
+                                    //循环三级
+                                    for (i3 = 0; i3 < len3; i3++) {
+                                        if (tempArr[i3]['name'] == nameArr[2]) {
+                                            if (tempArr[i3]['headline']) {
+                                                return tempArr[i3]['headline'];
+                                            }
+                                            if ($.inArray(tempArr[i3]['title'].replace(/&nbsp;/g, ''), result) == -1) {
+                                                result.push(tempArr[i3]['title'].replace(/&nbsp;/g, ''));
+                                            }
+                                            return result;
+                                        }
+                                    }
+                                } else {
+                                    return result;
+                                }
                             }
                         }
+                    } else {
+                        return result;
                     }
-                } else {
-                    return result;
                 }
             }
+            return '';
         }
-        return '';
-    }
     };
     var Main = host.Class(pros, Event);
     Main.defConfig = defConfig;

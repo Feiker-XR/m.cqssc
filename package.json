@@ -5,7 +5,7 @@
   "main": "data.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"node ./bin/www"
+    "start": "node ./bin/www"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,12 @@
     "gulp-minify-html": "^1.0.6",
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^1.5.4"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.4",
+    "morgan": "^1.8.2",
+    "serve-favicon": "^2.4.3"
   }
 }
